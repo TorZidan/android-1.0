@@ -2,20 +2,39 @@
 # This folder contains the Android open source files that are part of Android 1.0 
 
 ## Copyright, licensing, redistribution :
-All files in this folder were downloaded from AOSP (the Android open source project) at https://android.googlesource.com/platform/.
-They are archive files in "tar.gz" format. Inside each archive, you can find one or more files named "NOTICE" or  "COPYING" or "LICENSE" or some other file 
-that declares that this work can be freely copied and redistributed.
+All files in this folder (except `linux-2.6.25.zip`) were downloaded from AOSP (the Android Open Source Project) at https://android.googlesource.com/platform/.
+For each file, I have included the original URL from where I downloaded it, so that you can go and it yourself if you want (provieded that these URLs are still valid in the future). Each archive file is in "tar.gz" format; each archive contains multiple files. Inside each archive file, you can find one or more files named "NOTICE" or  "COPYING" or "LICENSE" or some other file that declares that this work can be freely copied and redistributed; also, most text files contain a "header" that describes the same. If you have concerns about using, modifying or redistributing these files, please follow the links below to the origin of each file, and study them.
 
-In addition, file linux-2.6.25.zip was downloaded from  https://github.com/torvalds/linux/archive/refs/tags/v2.6.25.zip , whose license can be found at https://github.com/torvalds/linux/blob/master/COPYING
+In addition, file `linux-2.6.25.zip` was downloaded from  https://github.com/torvalds/linux/archive/refs/tags/v2.6.25.zip , whose license can be found at https://github.com/torvalds/linux/blob/master/COPYING.
 
-For each file below, I have included the original URL from where i downloaded it, so that you can go and get it yourself (provieded that these URLs are still valid in the future).
+I am NOT the creator of these files. I am providing them here, without modifying them.
 
-## AOSP (Android open source project) announcement on Oct 21, 2008:
 
-See https://web.archive.org/web/20081022173050/http://source.android.com/posts/opensource
+## What is Android 1.0?
+Android is an operating system for "smart" mobile phones,  developed by Google.
+
+On October 21, 2008, Google and the Open Handset Alliance announced the availability of the Android platform source code to everyone, for free, under the new Android Open Source Project,
+see https://web.archive.org/web/20081022173050/http://source.android.com/posts/opensource
 and the same post is also here: https://www.openhandsetalliance.com/press_102108.html.
 
-TL;DR: Android is open source.
+Android 1.0 is the initial version of these files.
+Back in 2008 and 2009, the only commercially-available phone that was running the Android 1.0 operating system was the "HTC Dream" phone (models DREA100 and DREA110) for TMobile wireless carrier in USA.
+It was also available in 2009 for the Rogers Wireless carrier in the United Kingdom, as model number DREA210.
+
+Note: before that, Google and HTC developed the "HTC Sooner" (model EXCA300) prototype phone that was running pre-1.0 version of Android; these versions of Android are not open source; this phone was never commercially sold; Google chose to scrap that project, in favor of the "HTC Dream" phone.
+
+Here is a brief history of the few first official Android builds for the "HTC Dream" TMobile phone in USA:
+
+| Build name | Android version | Build date | Notes |
+| :---:      | :---:           | :---:         | :---: |
+| TC4-RC19   | ???             | ???           | it is mentioned in [this](https://android.clients.google.com/updates/signed-kila-ota-114235-prereq.TC4-RC19.zip) file name (no-longer available).|
+| TC4-RC28   | ???             | ???           | it is mentioned in [this](https://android.clients.google.com/updates/signed-kila-ota-115247-prereq.TC4-RC19+RC28.zip) file name (no-longer available). |
+| TC4-RC29   | Android 1.0     | Oct. 24, 2008 | |
+| TC4-RC30   | Android 1.0     | Oct. 31, 2008 | |
+| PLAT-RC33  | Android 1.1 ("Petit Four")     | Jan. 16, 2009 | |
+| CRB43      | Android 1.5 ("Cupcake")        | May. 13, 2009 | |
+| DRC83      | Android 1.6_r1.1 ("Donut")     | Sep. 21, 2009 | |
+| DMD64      | Android 1.6_r1.5 ("Donut")     | Dec. 3,  2009 | |
 
 ## Why did I store these files here?
 We don't know if these files will be available in the future , so I stored them here.
