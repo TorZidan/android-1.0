@@ -3,7 +3,7 @@
 
 ## Copyright, licensing, redistribution :
 All files in this folder (except `linux-2.6.25.zip`) were downloaded from AOSP (the Android Open Source Project) at https://android.googlesource.com/platform/.
-For each file, I have included the original URL from where I downloaded it, so that you can go and it yourself if you want (provieded that these URLs are still valid in the future). Each archive file is in "tar.gz" format; each archive contains multiple files. Inside each archive file, you can find one or more files named "NOTICE" or  "COPYING" or "LICENSE" or some other file that declares that this work can be freely copied and redistributed; also, most text files contain a "header" that describes the same. If you have concerns about using, modifying or redistributing these files, please follow the links below to the origin of each file, and study them.
+For each file, I have included the original URL from where I downloaded it, so that you can go and it yourself if you want (provided that these URLs are still valid in the future). Each archive file is in "tar.gz" format; each archive contains multiple files. Inside each archive file, you can find one or more files named "NOTICE" or  "COPYING" or "LICENSE" or some other file that declares that this work can be freely copied and redistributed; also, most text files contain a "header" that describes the same. If you have concerns about using, modifying or redistributing these files, please follow the links below to the origin of each file, and study them.
 
 In addition, file `linux-2.6.25.zip` was downloaded from  https://github.com/torvalds/linux/archive/refs/tags/v2.6.25.zip , whose license can be found at https://github.com/torvalds/linux/blob/master/COPYING.
 
@@ -37,10 +37,10 @@ Here is a brief history of the few first official Android builds for the "HTC Dr
 | DMD64      | Android 1.6_r1.5 ("Donut")     | Dec. 3,  2009 | |
 
 ## Why did I store these files here?
-As I describe firther down, there is no easy way to discover these files, at https://android.googlesource.com/platform/.
+As I describe further down, there is no easy way to discover these files, at https://android.googlesource.com/platform/.
 Also, we don't know if these files will be available in the future , so I stored them here.
 
-This is , basically, preservation of historical artifact that spawned a new era of compute.
+This is , basically, preservation of historical artifacts that spawned a new era of compute.
 
 ## What can you do with these files?
 
@@ -92,14 +92,14 @@ repo init -u git://android.git.kernel.org/platform/manifest.git
 repo sync
 ```
 
-Unfortunatelly, the android.git.kernel.org" git repository is no-longer available.
+Unfortunately, the android.git.kernel.org" git repository is no-longer available.
 
-Fortunatelly, the same files are available at https://android.googlesource.com/platform .
+Fortunately, the same files are available at https://android.googlesource.com/platform .
 
 If they were "tagged" as e.g. "android-1.0", we could use the most-recent "repo init && repo sync" commands to download them; 
-unfortunatelly, there is no such tag (the oldest tag in these git repositories is "android-1.6_r1"). 
+unfortunately, there is no such tag (the oldest tag in these git repositories is "android-1.6_r1"). 
 
-Fortunatelly, all these files were commited all at the same time,
+Fortunately, all these files were commited all at the same time,
 on `Tue Oct 21 07:00:00 2008 -0700`, the same day when the Android Open Source Project was announced,
 by `The Android Open Source Project <initial-contribution@android.com>`.
 
@@ -144,10 +144,10 @@ Let's say we are in Git repository https://android.googlesource.com/platform/sys
 looking for a commit on `Tue Oct 21 07:00:00 2008 -0700` by `The Android Open Source Project <initial-contribution@android.com>`.
 I had to navigate to the oldest tag "android-1.6_r1",
 (e.g. https://android.googlesource.com/platform/system/wlan/ti/+/refs/tags/android-1.6_r1),
-then click on the "log" link to view commite that occured at and before this tag; in some git repositories, like this one,
+then click on the "log" link to view commits that occurred at and before this tag; in some git repositories, like this one,
 there were just a few commits, so I could see the "Initial Contribution" commit right there on the page. 
 However, in active and larger repositories I had to click "Next" at the bottom of the page hundreds of times until I got to that very first "Initial Contribution" commit.
-I even wrote a tiny javascript pirce of code that I could run from the Chrome browser developer console, which would locate and click on the "Next" button for us.
+I wrote a tiny javascript piece of code that I could run from the Chrome browser developer console, which would locate and click on the "Next" button on the page for me.
 
 ## Anatomy of a Git repository:
 The android open source files are spread across multiple Git repositories. Once you choose which tag you want,
@@ -156,16 +156,18 @@ you can check it out on your Linux pc (this works as of Dec 2024):
 The "repo" python script reads the "Manifest" file (named "default.xml")
 from e.g. https://android.googlesource.com/platform/manifest/+/3dbf7a37083842030d67082219af4b6a09f1a12b/default.xml ; It directs "repo" which Git repositories to fetch, into which subfolder.
 Since there is no-longer a git tag named "android-1.0", I can't use "repo init" to download these files. Instead, I had to discover and manually download all files below,
-which, when unziped into the correct subfolder, will give us the full set of the Android 1.0 files.
+which, when unzipped into the correct subfolder, will give us the full set of the Android 1.0 files.
 One such repository is https://android.googlesource.com/platform/system/wlan/ti.git, which is same as https://android.googlesource.com/platform/system/wlan/ti
-From that web page I can easily navigate to all brances and tags: 
+From that web page I can easily navigate to all branches and tags: 
 Below "Tags", click on the "More ..." link to view all tags. 
 Then find on the web page tag "android-1.6_r1" and click on it.
-We get to page https://android.googlesource.com/platform/system/wlan/ti/+/refs/tags/android-1.6_r1 from we can download all files at that tag
+We get to page https://android.googlesource.com/platform/system/wlan/ti/+/refs/tags/android-1.6_r1 , from where we can download all files at that tag
 by clicking on the "tgz" link.
 
 ## List of all files
 Below is a list of all files that comprise Android 1.0.
+
+Again: once you download these files on a Linux PC, use the [unzip.sh](unzip.sh) shell script to recreate the android-1.0 source file tree.
 
 ### Git project "platform/bionic": contains the C runtime: libc, libm, libdl, dynamic linker.
 
