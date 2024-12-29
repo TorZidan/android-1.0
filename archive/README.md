@@ -42,7 +42,11 @@ Also, we don't know if these files will be available in the future , so I stored
 
 This is , basically, preservation of historical artifact that spawned a new era of compute.
 
-But it's more than that. These files, along with a working HTC Dream phone, offer the perfect environment for learning C, C++, Linux, Java and the Android framework. Unlike bulky vintage computers from earlier eras, the HTC phone is a full-fledged vintage device that is easy to program, has tons of interesting software, and fits in your pocket. The Android emulator and simulator (these are two different things) run on Linux, Windows and Mac, and offer an easy way of "kicking the tires" even if you don't have an Android phone.
+## What can you do with these files?
+
+Once you download these files on a Linux PC, use the [unzip.sh](unzip.sh) shell script to recreate the android-1.0 source file tree, and then build the project (instructions are coming soon).
+
+These files, along with a working HTC Dream phone, offer the perfect environment for learning C, C++, Linux, Java and the Android framework. Unlike bulky vintage computers from earlier eras, the HTC phone is a full-fledged vintage device that is easy to program, has tons of interesting software, and fits in your pocket. The Android emulator and simulator (these are two different things) are both here; they run on Linux, Windows and Mac, and offer an easy way of "kicking the tires", even if you don't have an Android phone.
 
 ## How do we know that the files below are for Android 1.0?
 Upon successful build, there will be a subfolder "out", where we can find file `build.prop`:
