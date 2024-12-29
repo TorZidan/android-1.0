@@ -115,7 +115,7 @@ bootloader/legacy :        Bootloader reference code
 build :                    Build system
 dalvik :                   Dalvik virtual machine
 development :              High-level development and debugging tools
-external/???               ???
+external                   External software that this project uses and depends on
 frameworks/base :          Core Android app framework libraries
 frameworks/policies/base : Framework configuration policies
 hardware/libhardware :     Hardware abstraction library
