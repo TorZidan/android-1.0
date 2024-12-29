@@ -37,10 +37,12 @@ Here is a brief history of the few first official Android builds for the "HTC Dr
 | DMD64      | Android 1.6_r1.5 ("Donut")     | Dec. 3,  2009 | |
 
 ## Why did I store these files here?
-We don't know if these files will be available in the future , so I stored them here.
-For example, some of the download URLs below have invalid (expired) SSL certificates
-(e.g. https://android.googleid.googlesource.com/platform/frameworks/policies/base/+/58096b60fc111564c663d685d3b147ea4a5f3832), 
-which makes me think that they won't be available in the future.
+As I describe firther down, there is no easy way to discover these files, at https://android.googlesource.com/platform/.
+Also, we don't know if these files will be available in the future , so I stored them here.
+
+This is , basically, preservation of historical artifact that spawned a new era of compute.
+
+But it's more than that. These files, along with a working HTC Dream phone, offer the perfect environment for learning C, C++, Linux, Java and the Android framework. Unlike bulky vintage computers from earlier eras, the HTC phone is a full-fledged vintage device that is easy to program, has tons of interesting software, and fits in your pocket. The Android emulator and simulator (these are two different things) run on Linux, Windows and Mac, and offer an easy way of "kicking the tires" even if you don't have an Android phone.
 
 ## How do we know that the files below are for Android 1.0?
 Upon successful build, there will be a subfolder "out", where we can find file `build.prop`:
@@ -134,10 +136,10 @@ then manually download it (see below for more info); some lines in this file wer
 
 ## Was it challenging to find these files?
 It was a tedious process. Example:
-Let's say we are in Git repository https://android.googleid.googlesource.com/platform/system/wlan/ti,
+Let's say we are in Git repository https://android.googlesource.com/platform/system/wlan/ti,
 looking for a commit on `Tue Oct 21 07:00:00 2008 -0700` by `The Android Open Source Project <initial-contribution@android.com>`.
 I had to navigate to the oldest tag "android-1.6_r1",
-(e.g. https://android.googleid.googlesource.com/platform/system/wlan/ti/+/refs/tags/android-1.6_r1),
+(e.g. https://android.googlesource.com/platform/system/wlan/ti/+/refs/tags/android-1.6_r1),
 then click on the "log" link to view commite that occured at and before this tag; in some git repositories, like this one,
 there were just a few commits, so I could see the "Initial Contribution" commit right there on the page. 
 However, in active and larger repositories I had to click "Next" at the bottom of the page hundreds of times until I got to that very first "Initial Contribution" commit.
@@ -151,11 +153,11 @@ The "repo" python script reads the "Manifest" file (named "default.xml")
 from e.g. https://android.googlesource.com/platform/manifest/+/3dbf7a37083842030d67082219af4b6a09f1a12b/default.xml ; It directs "repo" which Git repositories to fetch, into which subfolder.
 Since there is no-longer a git tag named "android-1.0", I can't use "repo init" to download these files. Instead, I had to discover and manually download all files below,
 which, when unziped into the correct subfolder, will give us the full set of the Android 1.0 files.
-One such repository is https://android.googleid.googlesource.com/platform/system/wlan/ti.git, which is same as https://android.googleid.googlesource.com/platform/system/wlan/ti
+One such repository is https://android.googlesource.com/platform/system/wlan/ti.git, which is same as https://android.googlesource.com/platform/system/wlan/ti
 From that web page I can easily navigate to all brances and tags: 
 Below "Tags", click on the "More ..." link to view all tags. 
 Then find on the web page tag "android-1.6_r1" and click on it.
-We get to page https://android.googleid.googlesource.com/platform/system/wlan/ti/+/refs/tags/android-1.6_r1 from we can download all files at that tag
+We get to page https://android.googlesource.com/platform/system/wlan/ti/+/refs/tags/android-1.6_r1 from we can download all files at that tag
 by clicking on the "tgz" link.
 
 ## List of all files
@@ -178,7 +180,7 @@ Description: Initial Contribution
 
 File recovery-23580ca27a0a8109312fdd36cc363ad1f4719889.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/bootable/recovery/+/23580ca27a0a8109312fdd36cc363ad1f4719889
+Downloaded from https://android.googlesource.com/platform/bootable/recovery/+/23580ca27a0a8109312fdd36cc363ad1f4719889
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -933,7 +935,7 @@ Description: Initial Contribution
 
 File base-58096b60fc111564c663d685d3b147ea4a5f3832.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/frameworks/policies/base/+/58096b60fc111564c663d685d3b147ea4a5f3832
+Downloaded from https://android.googlesource.com/platform/frameworks/policies/base/+/58096b60fc111564c663d685d3b147ea4a5f3832
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -946,7 +948,7 @@ Description: Initial Contribution
 
 File libhardware-d6054a36475b5ff502b4af78f7d272a713c1a8e7.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/hardware/libhardware/+/d6054a36475b5ff502b4af78f7d272a713c1a8e7
+Downloaded from https://android.googlesource.com/platform/hardware/libhardware/+/d6054a36475b5ff502b4af78f7d272a713c1a8e7
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -959,7 +961,7 @@ Description: Initial Contribution
 
 File ril-dbbb392e15b5ace6f19e76c49c80ea14292e8a4d.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/hardware/ril/+/dbbb392e15b5ace6f19e76c49c80ea14292e8a4d
+Downloaded from https://android.googlesource.com/platform/hardware/ril/+/dbbb392e15b5ace6f19e76c49c80ea14292e8a4d
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -1384,7 +1386,7 @@ Description: Initial Contribution
 
 File prebuilt-e7214a75e616f54c5de3b38bfceae11ee5f1b9eb.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/prebuilt/+/e7214a75e616f54c5de3b38bfceae11ee5f1b9eb
+Downloaded from https://android.googlesource.com/platform/prebuilt/+/e7214a75e616f54c5de3b38bfceae11ee5f1b9eb
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -1397,7 +1399,7 @@ Description: Initial Contribution
 
 File bluetooth-6c2d13d0c3a4505fdac56ae8d537a68218e072f1.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/system/bluetooth/+/6c2d13d0c3a4505fdac56ae8d537a68218e072f1
+Downloaded from https://android.googlesource.com/platform/system/bluetooth/+/6c2d13d0c3a4505fdac56ae8d537a68218e072f1
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -1410,7 +1412,7 @@ Description: Initial Contribution
 
 File core-4f6e8d7a00cbeda1e70cc15be9c4af1018bdad53.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/system/core/+/4f6e8d7a00cbeda1e70cc15be9c4af1018bdad53
+Downloaded from https://android.googlesource.com/platform/system/core/+/4f6e8d7a00cbeda1e70cc15be9c4af1018bdad53
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -1423,7 +1425,7 @@ Description: Initial Contribution
 
 File extras-7341494707810f709855ea85ce03a8ec3ac8dbaf.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/system/extras/+/7341494707810f709855ea85ce03a8ec3ac8dbaf
+Downloaded from https://android.googlesource.com/platform/system/extras/+/7341494707810f709855ea85ce03a8ec3ac8dbaf
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -1436,7 +1438,7 @@ Description: Initial Contribution
 
 File ti-607e8a019b921eee008cd1e9ffc132318fabce7f.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/system/wlan/ti/+/607e8a019b921eee008cd1e9ffc132318fabce7f
+Downloaded from https://android.googlesource.com/platform/system/wlan/ti/+/607e8a019b921eee008cd1e9ffc132318fabce7f
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -1449,7 +1451,7 @@ Description: Initial Contribution
 
 File dream-open-419383f1193353baf5d3fae523e632363ee69637.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/vendor/htc/dream-open/+/419383f1193353baf5d3fae523e632363ee69637
+Downloaded from https://android.googlesource.com/platform/vendor/htc/dream-open/+/419383f1193353baf5d3fae523e632363ee69637
 
 Committer: Brian Swetland <swetland@google.com>
 
@@ -1459,7 +1461,7 @@ Description: initial commit
 
 Also, a newer file with more "stuff": dream-open-e3868b58332ab687e3d7225a04db4022572762e8.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/vendor/htc/dream-open/+/e3868b58332ab687e3d7225a04db4022572762e8
+Downloaded from https://android.googlesource.com/platform/vendor/htc/dream-open/+/e3868b58332ab687e3d7225a04db4022572762e8
 
 Committer: Iliyan Malchev <malchev@google.com>
 
@@ -1475,7 +1477,7 @@ See more at https://web.archive.org/web/20090228161022/https://source.android.co
 
 File msm7k-a3a947cc7e1bfaf7b5cfc85b71f602edf562836d.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/hardware/msm7k/+/a3a947cc7e1bfaf7b5cfc85b71f602edf562836d
+Downloaded from https://android.googlesource.com/platform/hardware/msm7k/+/a3a947cc7e1bfaf7b5cfc85b71f602edf562836d
 
 Committer: Brian Swetland <swetland@google.com>
 
@@ -1485,7 +1487,7 @@ Description: msm7k hardware glue, initial checkin: libaudio
 
 Also, a newer archive with more "stuff": msm7k-040da078eb98745efe4b3f05ad72e61c66ba70b5.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/hardware/msm7k/+/040da078eb98745efe4b3f05ad72e61c66ba70b5
+Downloaded from https://android.googlesource.com/platform/hardware/msm7k/+/040da078eb98745efe4b3f05ad72e61c66ba70b5
 
 Committer: Iliyan Malchev <malchev@google.com>
 
