@@ -47,6 +47,17 @@ Obviously, this is just one way to do this. You can use any other VM software, o
      * `sudo apt-get install  gcc-4.1 gcc-4.1-base cpp-4.1 gcc-4.1-doc gcc-4.1-multilib gcc-4.1-locales libmudflap0-dev` 
      * `sudo apt-get install valgrind`
      * `sudo apt-get install git-core`
+     * `sudo apt-get install openssl zlib1g-dev gettext libcurl4-openssl-dev`
 
+1. Install Java and JDK 1.5:
+      * On a modern PC, download file `jdk-1_5_0_22-linux-i586.bin` from https://www.oracle.com/java/technologies/java-archive-javase5-downloads.html . You will need to create an Oracle.com account (it's free) and go through the pain of downloading this file. It ain't easy, but possible, I promise.
+      * Transfer file `jdk-1_5_0_22-linux-i586.bin` to the Ubuntu VM, into your "home" folder. See a section below for how to transfer files from your PC to the VM.
+      * In the Ubuntu VM:
+        ```
+        cd ~ && chmod +x jdk-1_5_0_22-linux-i586.bin && mkdir java && cd java
+        ../jdk-1_5_0_22-linux-i586.bin
+            ... then scroll to the prompt, type "yes", enter. It will extract the Java files in the current folder (~/java).
+        ```
+        
   
      
