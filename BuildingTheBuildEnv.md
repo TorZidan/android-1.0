@@ -13,12 +13,11 @@ Obviously, this is just one way to do this. You can use any other VM software, o
 1. In Virtual Box, choose "Machine -> New", choose "base memory" of 4 GB , "1" Processors, "50 GB" of virtual hard disk size, and go through the pain of launching the Ubuntu v10.04 installer from the ISO file and then follow the Ubuntu installation instructions. For me, the Ubuntu installation screens were partially off-screen, so I could not see the mouse pointer to click on "Next", etc. I had to use the "Tab" button to navingate on these windows, and hit "Enter" at the right place. Choose your favorite username (I chose "android") and a password.
    
 1. Once the installation is complete:
-    * Shut down the Ubuntu VM, make sure that in the VM properties we have given it enough Video RAM (I gave it 64 MB), and then launch the Ubuntu VM and login with yout chosen username/pwd.
-    * Make sure in that in the VM properties we have given enough Video RAM (I gave it 64 MB)
-    * Make sure Devices->Shared Clipboard is set to "Bidirectional.
-    * Make sure under Devices->Network the option "Connect Network Adapter" is checked.
-    * Under "View" menu, make sure the "Auto resize guest display" is checked.
-    * In Ubuntu, under System->Preferences->Monitors choose a comfortable screen size, e.g. 1600x1200 pixels.
+    * Shut down the Ubuntu VM, then make sure that in the VM settings we have given enough Video RAM (I gave it 64 MB), and then launch the Ubuntu VM and login with yout chosen username/pwd.
+    * Make sure the menu item Devices->Shared Clipboard is set to "Bidirectional.
+    * Make sure under menu item Devices->Network the option "Connect Network Adapter" is checked.
+    * Under the "View" menu, make sure the "Auto resize guest display" is checked.
+    * In Ubuntu, under System->Preferences->Monitors choose a comfortable screen size, e.g. 1600x1200 pixels. The VM window should auto-resize to that much-needed bigger size. Nice.
 
 1. In Ubuntu: fix the URL location of the package updates, so that we can download and install packages via `sudo apt-get install ....`:
 
