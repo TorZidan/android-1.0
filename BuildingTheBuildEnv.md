@@ -40,9 +40,13 @@ Obviously, this is just one way to do this. You can use any other VM software, o
     Note: One of it's features is to be able to access folders on your main OS from within Ubuntu. I never managed to get it to work. Most likely these "guest utils" (which are circa-2010) no-longer work well with the latest version of VirtualBox. Oh, well. Would have been nice if it worked.
 
 1. Install a lot of "stuff":
-     * `sudo apt-get install g++-4.1`
-     * `sudo apt-get install g++-4.1-multilib libstdc++6-4.1-dbg libstdc++6-4.1-doc`
-     * `sudo apt-get install gcc-4.1`
-     * TO BE CONTINUED
+     * `sudo apt-get install linux-headers-2.6.32-74 linux-headers-2.6.32-74-generic`
+     * `sudo apt-get install flex bison gperf libsdl-dev libesd0-dev libwxgtk2.6-dev build-essential zip curl zlib1g-dev`
+     * `sudo apt-get install libwxgtk2.6-dbg libwxbase2.6-dbg libwxgtk2.6-0 libwxgtk2.6-dev libwxgtk2.6-dbg libwxbase2.6-0 wx2.6-headers`
+     * `sudo apt-get install g++-4.1 g++-4.1-multilib libstdc++6-4.1-dbg libstdc++6-4.1-doc libstdc++6-4.1-dev`
+     * `sudo apt-get install  gcc-4.1 gcc-4.1-base cpp-4.1 gcc-4.1-doc gcc-4.1-multilib gcc-4.1-locales libmudflap0-dev` 
+     * `sudo apt-get install valgrind`
+     * `sudo apt-get install git-core`
+
   
      
