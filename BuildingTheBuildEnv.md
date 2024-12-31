@@ -20,10 +20,10 @@ So let's proceed:
 
 1. Download the Ubuntu v10.04 32-bit installation ISO file `ubuntu-10.04.4-desktop-i386.iso` from https://old-releases.ubuntu.com/releases/10.04.0/ . Note: the max RAM (addressable space) for any 32-bit OS is 4 GB, which is plenty for our purposes. Note: a 32-bit OS runs just fine on 64-bit processors.
    
-1. In Virtual Box, choose "Machine -> New", choose "base memory" of 4 GB , "1" Processors, "50 GB" of virtual hard disk size, and go through the pain of launching the Ubuntu v10.04 installer from the ISO file and then follow the Ubuntu installation instructions. For me, the Ubuntu installation screens were partially off-screen, so I could not see the mouse pointer to click on "Next", etc. I had to use the "Tab" button to navingate on these windows, and hit "Enter" at the right place. Choose your favorite username (I chose "android") and a password.
+1. In Virtual Box, choose "Machine -> New", choose "Base memory" of 4 GB , "1" Processors, "50 GB" of virtual hard disk size, and go through the pain of launching the Ubuntu v10.04 installer from the ISO file and then follow the Ubuntu installation instructions. For me, the Ubuntu installation screens were partially off-screen, so I could not see the mouse pointer to click on "Next", etc. I had to use the "Tab" button to navingate on these windows, and hit "Enter" at the right place. Choose your favorite username (I chose "android") and a password.
    
 1. Once the installation is complete:
-    * Shut down the Ubuntu VM, then make sure that in the VM settings we have given enough Video RAM (I gave it 64 MB), and then launch the Ubuntu VM and login with yout chosen username/pwd.
+    * Shut down the Ubuntu VM, then make sure that in the VM Settings, section "Display", we have given it enough Video Memory (I gave it 64 MB), and then launch the Ubuntu VM and login with yout chosen username/pwd.
     * Make sure the menu item Devices->Shared Clipboard is set to "Bidirectional".
     * Make sure under menu item Devices->Network the option "Connect Network Adapter" is checked.
     * Under the "View" menu, make sure the "Auto resize guest display" is checked.
@@ -77,6 +77,6 @@ So let's proceed:
 
 1. How can I transfer files from my PC to the "guest" Ubuntu OS and back? As I said above, there is a feature that enables Ubuntu to "see" a folder on your PC, but I could not get it to work. So I could try "ftp" or "sftp", but I went for a simpler approach: Use a small (e.g. 8 GB) flash drive; format it on your PC with "FAT 32". Use it to transfer files in the following way: Once the drive is recognized in your main OS, copy files to it. Then go to the VM window, go to menu "Devices->USB", and click on the falsh drive devices. Virtual box will "unmount it" from your main OS and mount it in Ubuntu; here, open a File Explorer window, give it a few seconds, and the flash drive will appear in the left pane. Click on it and the files will show up in the right pane. Now you can copy files from/to it. Once done, use the same menu item to "unmount it". You will need to physically unplug the flash drive and plug it again to get it recognized again in your main OS.
 
-1. This should do it. Have you fould an easier way to do any of these steps? Let me know by opening a "New Issue" here, on Github. Now proceed to [Buildding Android 1.0](BuildingIt.md). 
+1. This should do it. Have you found an easier way to do any of these steps? Let me know by opening a "New Issue" here, on Github. Now proceed to [Buildding Android 1.0](BuildingIt.md). 
   
      
