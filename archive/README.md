@@ -11,7 +11,7 @@ Disclaimer: I am NOT the creator of these files. I am not associated in any ways
 
 
 ## What is Android 1.0?
-Android is an operating system for "smart" mobile phones, developed by Google.
+Android is an operating system for "smartphones", developed by Google.
 
 On October 21, 2008, Google and the Open Handset Alliance announced the availability of the Android platform source code to everyone, for free, under the new Android Open Source Project,
 see https://web.archive.org/web/20081022173050/http://source.android.com/posts/opensource
@@ -21,9 +21,11 @@ Android 1.0 is the initial version of these files.
 Back in 2008 and 2009, the only commercially-available phone that was running the Android 1.0 operating system was the "HTC Dream" phone (models DREA100 and DREA110) for TMobile wireless carrier in USA.
 It was also available in 2009 for the Rogers Wireless carrier in the United Kingdom (model DREA210).
 
-Note: before that, in 2007, Google and HTC developed the "HTC Sooner" (model EXCA300), a prototype phone that looked like a Blueberry (the king of "smart" phones back then), with no wi-fi or touch screen; it was running pre-1.0 versions of Android (e.g. build htc-2065.0.8.0.0 from 2007-05-15); these versions are not open source; this phone was never commercially sold. Google chose to scrap that project, in favor of the "HTC Dream" phone. Apple announced the iPhone in Jan 2007 and it went on sale in July of that yeat. Very likely the iPhone had a lot to do with Google's decision. It seems that Google gave away? some HTC Sooner phones to researches at Stanford; there are some artifacts [here](https://web.archive.org/web/20091016081617/http://android.stanford.edu/index.php/Main_Page).
+Note: before that, in 2007, Google and HTC developed the "HTC Sooner" (model EXCA300), a prototype phone that looked like a typical BlueBerry "slab" smartphone, with no wi-fi, no touch screen; it was running pre-1.0 versions of Android (e.g. build htc-2065.0.8.0.0 from 2007-05-15); these versions are not open source; this phone was never commercially sold. Google chose to scrap that project, in favor of the "HTC Dream" phone. Apple announced the iPhone in Jan 2007 and it went on sale in June of that yeat. Very likely the iPhone had a lot to do with Google's decision.
 
 Interestingly, Android-related posts appeared on the webs in Nov 2007 (or even earlier?), way before the Oct 2008 open-source announcement, e.g. https://web.archive.org/web/20071116110943/http://benno.id.au/blog/. 
+
+I can't resist sharing [this](https://news.ycombinator.com/item?id=22286111) discussion, as it lays out the "clash of the titans" of the mobile world, the demise of old corporate empires and the rise of new ones. Note: as any un-moderated online discussion, not everything in there is true, and you should take these individual oppinions with a "grain of salt".
 
 Here is a brief list of the few first official Android builds for the "HTC Dream" TMobile phone in USA:
 
