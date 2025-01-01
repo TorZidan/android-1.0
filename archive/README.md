@@ -7,21 +7,23 @@ For each file, I have included the original URL from where I downloaded it, so t
 
 In addition, file `linux-2.6.25.zip` was downloaded from  https://github.com/torvalds/linux/archive/refs/tags/v2.6.25.zip , whose license can be found at https://github.com/torvalds/linux/blob/master/COPYING.
 
-I am NOT the creator of these files. I am providing them here, without modifying them.
+Disclaimer: I am NOT the creator of these files. I am not associated in any ways with the Android Open Source Project. I am providing the files here as-is, without modifying them.
 
 
 ## What is Android 1.0?
-Android is an operating system for "smart" mobile phones,  developed by Google.
+Android is an operating system for "smart" mobile phones, developed by Google.
 
 On October 21, 2008, Google and the Open Handset Alliance announced the availability of the Android platform source code to everyone, for free, under the new Android Open Source Project,
 see https://web.archive.org/web/20081022173050/http://source.android.com/posts/opensource
-and the same post is also here: https://www.openhandsetalliance.com/press_102108.html.
+; the same post is also here: https://www.openhandsetalliance.com/press_102108.html.
 
 Android 1.0 is the initial version of these files.
 Back in 2008 and 2009, the only commercially-available phone that was running the Android 1.0 operating system was the "HTC Dream" phone (models DREA100 and DREA110) for TMobile wireless carrier in USA.
 It was also available in 2009 for the Rogers Wireless carrier in the United Kingdom, as model number DREA210.
 
-Note: before that, Google and HTC developed the "HTC Sooner" (model EXCA300) prototype phone that was running pre-1.0 version of Android; these versions of Android are not open source; this phone was never commercially sold; Google chose to scrap that project, in favor of the "HTC Dream" phone.
+Note: before that, in 2007, Google and HTC developed the "HTC Sooner" (model EXCA300) prototype phone that was running pre-1.0 versions of Android (e.g. build htc-2065.0.8.0.0 from 2007-05-15); these versions are not open source; this phone was never commercially sold. Google chose to scrap that project, in favor of the "HTC Dream" phone. Very Likely the iPhone announcement by Apple in Jan 2007 had a lot to do with this decision. It seems that Google gave away? some HTC Sooner phones to researches at Stanford; there are some artifacts [here](https://web.archive.org/web/20091016081617/http://android.stanford.edu/index.php/Main_Page).
+
+Interestingly, Android-related posts appeared on the webs in Nov 2007 (or even earlier?), way before the Oct 2008 open-source announcement, e.g. https://web.archive.org/web/20071116110943/http://benno.id.au/blog/. 
 
 Here is a brief history of the few first official Android builds for the "HTC Dream" TMobile phone in USA:
 
