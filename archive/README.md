@@ -23,7 +23,7 @@ It was also available in 2009 for the Rogers Wireless carrier in the United King
 
 Note: before that, in 2007, Google and HTC developed the "HTC Sooner" (model EXCA300), a prototype phone that looked like a typical BlueBerry "slab" smartphone, with no wi-fi, no touch screen; it was running pre-1.0 versions of Android (e.g. build htc-2065.0.8.0.0 from 2007-05-15); these versions are not open source; this phone was never commercially sold. Google chose to scrap that project, in favor of the "HTC Dream" phone. Apple announced the iPhone in Jan 2007 and it went on sale in June of that yeat. Very likely the iPhone had a lot to do with Google's decision.
 
-Interestingly, Android-related posts appeared on the webs in Nov 2007 (or even earlier?), way before the Oct 2008 open-source announcement, e.g. https://web.archive.org/web/20071116110943/http://benno.id.au/blog/. 
+Interestingly, Android-related posts appeared on the webs in Nov 2007 (or even earlier?), way before the Oct 2008 open-source announcement, e.g. [here](https://web.archive.org/web/20071116110943/http://benno.id.au/blog/). 
 
 I can't resist sharing [this](https://news.ycombinator.com/item?id=22286111) discussion, as it lays out the "clash of the titans" of the mobile world, the demise of old corporate empires and the rise of new ones. Note: as any un-moderated online discussion, not everything in there is true, and you should take these individual oppinions with a "grain of salt".
 
@@ -44,7 +44,7 @@ Here is a brief list of the few first official Android builds for the "HTC Dream
 As I describe further down, there is no easy way to discover these files, at https://android.googlesource.com/platform/.
 Also, we don't know if these files will be available in the future , so I stored them here.
 
-This is , basically, preservation of historical artifacts that spawned a new era of compute.
+This is, basically, preservation of historical artifacts that profoundly changed our lives forever.
 
 ## What can you do with these files?
 
