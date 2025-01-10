@@ -3,7 +3,7 @@
 
 ## Copyright, licensing, redistribution :
 All files in this folder (except `linux-2.6.25.zip`) were downloaded from AOSP (the Android Open Source Project) at https://android.googlesource.com/platform/.
-For each file, I have included the original URL from where I downloaded it, so that you can go and it yourself if you want (provided that these URLs are still valid in the future). Each archive file is in "tar.gz" format; each archive contains multiple files. Inside each archive file, you can find one or more files named "NOTICE" or  "COPYING" or "LICENSE" or some other file that declares that this work can be freely copied and redistributed; also, most text files contain a "header" that describes the same. If you have concerns about using, modifying or redistributing these files, please follow the links below to the origin of each file, and study them.
+For each file, I have included the original URL from where I downloaded it, so that you can go and get it yourself if you want (provided that these URLs are still valid in the future). Each archive file is in "tar.gz" format; each archive contains multiple files. Inside each archive file, you can find one or more files named "NOTICE" or  "COPYING" or "LICENSE" or some other file that declares that this work can be freely copied and redistributed; also, most text files contain a "header" that describes the same. If you have concerns about using, modifying or redistributing these files, please follow the links below to the origin of each file, and study them.
 
 In addition, file `linux-2.6.25.zip` was downloaded from  https://github.com/torvalds/linux/archive/refs/tags/v2.6.25.zip , whose license can be found at https://github.com/torvalds/linux/blob/master/COPYING.
 
