@@ -153,22 +153,23 @@ there were just a few commits, so I could see the "Initial Contribution" commit 
 However, in active and larger repositories I had to click "Next" at the bottom of the page hundreds of times until I got to that very first "Initial Contribution" commit.
 I wrote a tiny javascript piece of code that I could run from the Chrome browser developer console, which would locate and click on the "Next" button on the page for me.
 
-## Anatomy of a Git repository:
-The android open source files are spread across multiple Git repositories. Once you choose which tag you want,
-you can check it out on your Linux pc (this works as of Dec 2024):
+## Anatomy of the AOSP codebase:
+The android open source files are spread across thousands of Git repositories; each one has a unique URL starting with https://android.googlesource.com/ , like a giant folder tree structure, where each "leaf" folder itself is a Git repository (which, itself, contains many files) . The good thing is that they are human-browsable: you can open https://android.googlesource.com/ in a web browser and start browsing. Note that only the "leafs" in that directory structure are git repoitoris, e.g. https://android.googlesource.com/platform/ is not a repository, but https://android.googlesource.com/platform/system/wlan/ti/ is. Also, the url https://android.googlesource.com/platform/system/wlan/ti/ is an "alias"  for (is same as) https://android.googlesource.com/platform/system/wlan/ti.git. The interesting files for us are in repository https://android.googlesource.com/kernel/msm/ and in the positories under https://android.googlesource.com/platform/...
+
+Once I choose a repository (e.g. https://android.googlesource.com/platform/system/wlan/ti.git), from that web page I can navigate to all branches and tags and commits. Example:
+under "Tags", click on the "More ..." link to view all tags; then find on that web page the tag "android-1.6_r1" and click on it;
+ we get to page https://android.googlesource.com/platform/system/wlan/ti/+/refs/tags/android-1.6_r1 , from where we can download all files at that tag
+by clicking on the "tgz" link. Also, here  we can click on the "log" link and see commits at and before that tag; at the bottom of the log page there is a "Next" button to go back in time to older commits; if you continue clicking on "Next" you will eventually reach the very first commit in that repository (which, in some of the git repositories,  is the Android 1.0 source code).
+
+Normally, you would use the "repo" python script on your PC to download all repositories with a specific "tag" or "branch name", e.g: 
 "repo init --partial-clone -b android-1.6_r1  -u https://android.googlesource.com/platform/manifest && repo sync"
 The "repo" python script reads the "Manifest" file (named "default.xml")
 from e.g. https://android.googlesource.com/platform/manifest/+/3dbf7a37083842030d67082219af4b6a09f1a12b/default.xml ; It directs "repo" which Git repositories to fetch, into which subfolder.
-Since there is no-longer a git tag named "android-1.0", I can't use "repo init" to download these files. Instead, I had to discover and manually download all files below,
-which, when unzipped into the correct subfolder, will give us the full set of the Android 1.0 files.
-One such repository is https://android.googlesource.com/platform/system/wlan/ti.git, which is same as https://android.googlesource.com/platform/system/wlan/ti
-From that web page I can easily navigate to all branches and tags: 
-Below "Tags", click on the "More ..." link to view all tags. 
-Then find on the web page tag "android-1.6_r1" and click on it.
-We get to page https://android.googlesource.com/platform/system/wlan/ti/+/refs/tags/android-1.6_r1 , from where we can download all files at that tag
-by clicking on the "tgz" link.
 
-## List of all files
+Since there is no git tag named "android-1.0", I can't use "repo init" to download the Android 1.0 files. Instead, I had to discover and manually download all files below,
+which, when unzipped into the correct subfolder, will give us the full set of the Android 1.0 files.
+
+## List of files
 Below is a list of all files that comprise Android 1.0.
 
 Again: once you download these files on a Linux PC, use the [unzip.sh](unzip.sh) shell script to recreate the android-1.0 source file tree.
