@@ -2,26 +2,55 @@
 # This folder contains the Android open source files that are part of Android 1.0 
 
 ## Copyright, licensing, redistribution :
-All files in this folder were downloaded from AOSP (the Android open source project) at https://android.googlesource.com/platform/.
-They are archive files in "tar.gz" format. Inside each archive, you can find one or more files named "NOTICE" or  "COPYING" or "LICENSE" or some other file 
-that declares that this work can be freely copied and redistributed.
+All files in this folder (except `linux-2.6.25.zip`) were downloaded from AOSP (the Android Open Source Project) at https://android.googlesource.com/platform/.
+For each file, I have included the original URL from where I downloaded it, so that you can go and get it yourself if you want (provided that these URLs are still valid in the future). Each archive file is in "tar.gz" format; each archive contains multiple files. Inside each archive file, you can find one or more files named "NOTICE" or  "COPYING" or "LICENSE" or some other file that declares that this work can be freely copied and redistributed; also, most text files contain a "header" that describes the same. If you have concerns about using, modifying or redistributing these files, please follow the links below to the origin of each file, and study them.
 
-In addition, file linux-2.6.25.zip was downloaded from  https://github.com/torvalds/linux/archive/refs/tags/v2.6.25.zip , whose license can be found at https://github.com/torvalds/linux/blob/master/COPYING
+In addition, file `linux-2.6.25.zip` was downloaded from  https://github.com/torvalds/linux/archive/refs/tags/v2.6.25.zip , whose license can be found at https://github.com/torvalds/linux/blob/master/COPYING.
 
-For each file below, I have included the original URL from where i downloaded it, so that you can go and get it yourself (provieded that these URLs are still valid in the future).
+Disclaimer: I am NOT the creator of these files. I am not associated in any ways with the Android Open Source Project. I am providing the files here as-is, without modifying them.
 
-## AOSP (Android open source project) announcement on Oct 21, 2008:
 
-See https://web.archive.org/web/20081022173050/http://source.android.com/posts/opensource
-and the same post is also here: https://www.openhandsetalliance.com/press_102108.html.
+## What is Android 1.0?
+Android is an operating system for "smartphones", developed by Google.
 
-TL;DR: Android is open source.
+On October 21, 2008, Google and the Open Handset Alliance announced the availability of the Android platform source code to everyone, for free, under the new Android Open Source Project,
+see https://web.archive.org/web/20081022173050/http://source.android.com/posts/opensource
+; the same post is also here: https://www.openhandsetalliance.com/press_102108.html.
+
+Android 1.0 is the initial version of these files.
+Back in 2008 and 2009, the only commercially-available phone that was running the Android 1.0 operating system was the "HTC Dream" phone (models DREA100 and DREA110) for TMobile wireless carrier in USA.
+It was also available in 2009 for the Rogers Wireless carrier in the United Kingdom (model DREA210).
+
+Note: before that, in 2007, Google and HTC developed the "HTC Sooner" (model EXCA300), a prototype phone that looked like a typical BlueBerry "slab" smartphone, with no wi-fi, no touch screen; it was running pre-1.0 versions of Android (e.g. build htc-2065.0.8.0.0 from 2007-05-15); these versions are not open source; this phone was never commercially sold. Google chose to scrap that project, in favor of the "HTC Dream" phone. Apple announced the iPhone in Jan 2007 and it went on sale in June of that yeat. Very likely the iPhone had a lot to do with Google's decision.
+
+Interestingly, Android-related posts appeared on the webs in Nov 2007 (or even earlier?), way before the Oct 2008 open-source announcement, e.g. [here](https://web.archive.org/web/20071116110943/http://benno.id.au/blog/). 
+
+I can't resist sharing [this](https://news.ycombinator.com/item?id=22286111) discussion, as it lays out the "clash of the titans" of the mobile world, the demise of old corporate empires and the rise of new ones. Note: as any un-moderated online discussion, not everything in there is true, and you should take these individual oppinions with a "grain of salt".
+
+Here is a brief list of the few first official Android builds for the "HTC Dream" TMobile phone in USA:
+
+| Build name | Android version | Build date | Notes |
+| :---:      | :---:           | :---:         | :---: |
+| TC4-RC19   | ???             | ???           | it is mentioned in [this](https://android.clients.google.com/updates/signed-kila-ota-114235-prereq.TC4-RC19.zip) file name (no-longer available).|
+| TC4-RC28   | ???             | ???           | it is mentioned in [this](https://android.clients.google.com/updates/signed-kila-ota-115247-prereq.TC4-RC19+RC28.zip) file name (no-longer available). |
+| TC4-RC29   | Android 1.0     | Oct. 24, 2008 | |
+| TC4-RC30   | Android 1.0     | Oct. 31, 2008 | |
+| PLAT-RC33  | Android 1.1 ("Petit Four")     | Jan. 16, 2009 | |
+| CRB43      | Android 1.5 ("Cupcake")        | May. 13, 2009 | |
+| DRC83      | Android 1.6_r1.1 ("Donut")     | Sep. 21, 2009 | |
+| DMD64      | Android 1.6_r1.5 ("Donut")     | Dec. 3,  2009 | |
 
 ## Why did I store these files here?
-We don't know if these files will be available in the future , so I stored them here.
-For example, some of the download URLs below have invalid (expired) SSL certificates
-(e.g. https://android.googleid.googlesource.com/platform/frameworks/policies/base/+/58096b60fc111564c663d685d3b147ea4a5f3832), 
-which makes me think that they won't be available in the future.
+As I describe further down, there is no easy way to discover these files, at https://android.googlesource.com/platform/.
+Also, we don't know if these files will be available in the future , so I stored them here.
+
+This is, basically, preservation of historical artifacts that profoundly changed our lives forever.
+
+## What can you do with these files?
+
+Once you download these files on a Linux PC, use the [unzip.sh](unzip.sh) shell script to recreate the android-1.0 source file tree, and then build the project (instructions are coming soon).
+
+These files, along with a working HTC Dream phone, offer the perfect environment for learning C, C++, Linux, Java and the Android framework. Unlike bulky vintage computers from earlier eras, the HTC phone is a full-fledged vintage device that is easy to program, has tons of interesting software, and fits in your pocket. The Android emulator and simulator (these are two different things) are both here; they run on Linux, Windows and Mac, and offer an easy way of "kicking the tires", even if you don't have an Android phone.
 
 ## How do we know that the files below are for Android 1.0?
 Upon successful build, there will be a subfolder "out", where we can find file `build.prop`:
@@ -67,14 +96,14 @@ repo init -u git://android.git.kernel.org/platform/manifest.git
 repo sync
 ```
 
-Unfortunatelly, the android.git.kernel.org" git repository is no-longer available.
+Unfortunately, the android.git.kernel.org" git repository is no-longer available.
 
-Fortunatelly, the same files are available at https://android.googlesource.com/platform .
+Fortunately, the same files are available at https://android.googlesource.com/platform .
 
 If they were "tagged" as e.g. "android-1.0", we could use the most-recent "repo init && repo sync" commands to download them; 
-unfortunatelly, there is no such tag (the oldest tag in these git repositories is "android-1.6_r1"). 
+unfortunately, there is no such tag (the oldest tag in these git repositories is "android-1.6_r1"). 
 
-Fortunatelly, all these files were commited all at the same time,
+Fortunately, all these files were commited all at the same time,
 on `Tue Oct 21 07:00:00 2008 -0700`, the same day when the Android Open Source Project was announced,
 by `The Android Open Source Project <initial-contribution@android.com>`.
 
@@ -90,7 +119,7 @@ bootloader/legacy :        Bootloader reference code
 build :                    Build system
 dalvik :                   Dalvik virtual machine
 development :              High-level development and debugging tools
-external/???               ???
+external                   External software that this project uses and depends on
 frameworks/base :          Core Android app framework libraries
 frameworks/policies/base : Framework configuration policies
 hardware/libhardware :     Hardware abstraction library
@@ -115,32 +144,35 @@ then manually download it (see below for more info); some lines in this file wer
 
 ## Was it challenging to find these files?
 It was a tedious process. Example:
-Let's say we are in Git repository https://android.googleid.googlesource.com/platform/system/wlan/ti,
+Let's say we are in Git repository https://android.googlesource.com/platform/system/wlan/ti,
 looking for a commit on `Tue Oct 21 07:00:00 2008 -0700` by `The Android Open Source Project <initial-contribution@android.com>`.
 I had to navigate to the oldest tag "android-1.6_r1",
-(e.g. https://android.googleid.googlesource.com/platform/system/wlan/ti/+/refs/tags/android-1.6_r1),
-then click on the "log" link to view commite that occured at and before this tag; in some git repositories, like this one,
+(e.g. https://android.googlesource.com/platform/system/wlan/ti/+/refs/tags/android-1.6_r1),
+then click on the "log" link to view commits that occurred at and before this tag; in some git repositories, like this one,
 there were just a few commits, so I could see the "Initial Contribution" commit right there on the page. 
 However, in active and larger repositories I had to click "Next" at the bottom of the page hundreds of times until I got to that very first "Initial Contribution" commit.
-I even wrote a tiny javascript pirce of code that I could run from the Chrome browser developer console, which would locate and click on the "Next" button for us.
+I wrote a tiny javascript piece of code that I could run from the Chrome browser developer console, which would locate and click on the "Next" button on the page for me.
 
-## Anatomy of a Git repository:
-The android open source files are spread across multiple Git repositories. Once you choose which tag you want,
-you can check it out on your Linux pc (this works as of Dec 2024):
+## Anatomy of the AOSP codebase:
+The android open source files are spread across thousands of Git repositories; each one has a unique URL starting with https://android.googlesource.com/ , like a giant folder tree structure, where each "leaf" folder itself is a Git repository (which, itself, contains many files) . The good thing is that they are human-browsable: you can open https://android.googlesource.com/ in a web browser and start browsing. Note that only the "leafs" in that directory structure are git repoitoris, e.g. https://android.googlesource.com/platform/ is not a repository, but https://android.googlesource.com/platform/system/wlan/ti/ is. Also, the url https://android.googlesource.com/platform/system/wlan/ti/ is an "alias"  for (is same as) https://android.googlesource.com/platform/system/wlan/ti.git. The interesting files for us are in repository https://android.googlesource.com/kernel/msm/ and in the positories under https://android.googlesource.com/platform/...
+
+Once I choose a repository (e.g. https://android.googlesource.com/platform/system/wlan/ti.git), from that web page I can navigate to all branches and tags and commits. Example:
+under "Tags", click on the "More ..." link to view all tags; then find on that web page the tag "android-1.6_r1" and click on it;
+ we get to page https://android.googlesource.com/platform/system/wlan/ti/+/refs/tags/android-1.6_r1 , from where we can download all files at that tag
+by clicking on the "tgz" link. Also, here  we can click on the "log" link and see commits at and before that tag; at the bottom of the log page there is a "Next" button to go back in time to older commits; if you continue clicking on "Next" you will eventually reach the very first commit in that repository (which, in some of the git repositories,  is the Android 1.0 source code).
+
+Normally, you would use the "repo" python script on your PC to download all repositories with a specific "tag" or "branch name", e.g: 
 "repo init --partial-clone -b android-1.6_r1  -u https://android.googlesource.com/platform/manifest && repo sync"
 The "repo" python script reads the "Manifest" file (named "default.xml")
 from e.g. https://android.googlesource.com/platform/manifest/+/3dbf7a37083842030d67082219af4b6a09f1a12b/default.xml ; It directs "repo" which Git repositories to fetch, into which subfolder.
-Since there is no-longer a git tag named "android-1.0", I can't use "repo init" to download these files. Instead, I had to discover and manually download all files below,
-which, when unziped into the correct subfolder, will give us the full set of the Android 1.0 files.
-One such repository is https://android.googleid.googlesource.com/platform/system/wlan/ti.git, which is same as https://android.googleid.googlesource.com/platform/system/wlan/ti
-From that web page I can easily navigate to all brances and tags: 
-Below "Tags", click on the "More ..." link to view all tags. 
-Then find on the web page tag "android-1.6_r1" and click on it.
-We get to page https://android.googleid.googlesource.com/platform/system/wlan/ti/+/refs/tags/android-1.6_r1 from we can download all files at that tag
-by clicking on the "tgz" link.
 
-## List of all files
+Since there is no git tag named "android-1.0", I can't use "repo init" to download the Android 1.0 files. Instead, I had to discover and manually download all files below,
+which, when unzipped into the correct subfolder, will give us the full set of the Android 1.0 files.
+
+## List of files
 Below is a list of all files that comprise Android 1.0.
+
+Again: once you download these files on a Linux PC, use the [unzip.sh](unzip.sh) shell script to recreate the android-1.0 source file tree.
 
 ### Git project "platform/bionic": contains the C runtime: libc, libm, libdl, dynamic linker.
 
@@ -159,7 +191,7 @@ Description: Initial Contribution
 
 File recovery-23580ca27a0a8109312fdd36cc363ad1f4719889.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/bootable/recovery/+/23580ca27a0a8109312fdd36cc363ad1f4719889
+Downloaded from https://android.googlesource.com/platform/bootable/recovery/+/23580ca27a0a8109312fdd36cc363ad1f4719889
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -914,7 +946,7 @@ Description: Initial Contribution
 
 File base-58096b60fc111564c663d685d3b147ea4a5f3832.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/frameworks/policies/base/+/58096b60fc111564c663d685d3b147ea4a5f3832
+Downloaded from https://android.googlesource.com/platform/frameworks/policies/base/+/58096b60fc111564c663d685d3b147ea4a5f3832
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -927,7 +959,7 @@ Description: Initial Contribution
 
 File libhardware-d6054a36475b5ff502b4af78f7d272a713c1a8e7.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/hardware/libhardware/+/d6054a36475b5ff502b4af78f7d272a713c1a8e7
+Downloaded from https://android.googlesource.com/platform/hardware/libhardware/+/d6054a36475b5ff502b4af78f7d272a713c1a8e7
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -940,7 +972,7 @@ Description: Initial Contribution
 
 File ril-dbbb392e15b5ace6f19e76c49c80ea14292e8a4d.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/hardware/ril/+/dbbb392e15b5ace6f19e76c49c80ea14292e8a4d
+Downloaded from https://android.googlesource.com/platform/hardware/ril/+/dbbb392e15b5ace6f19e76c49c80ea14292e8a4d
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -1365,7 +1397,7 @@ Description: Initial Contribution
 
 File prebuilt-e7214a75e616f54c5de3b38bfceae11ee5f1b9eb.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/prebuilt/+/e7214a75e616f54c5de3b38bfceae11ee5f1b9eb
+Downloaded from https://android.googlesource.com/platform/prebuilt/+/e7214a75e616f54c5de3b38bfceae11ee5f1b9eb
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -1378,7 +1410,7 @@ Description: Initial Contribution
 
 File bluetooth-6c2d13d0c3a4505fdac56ae8d537a68218e072f1.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/system/bluetooth/+/6c2d13d0c3a4505fdac56ae8d537a68218e072f1
+Downloaded from https://android.googlesource.com/platform/system/bluetooth/+/6c2d13d0c3a4505fdac56ae8d537a68218e072f1
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -1391,7 +1423,7 @@ Description: Initial Contribution
 
 File core-4f6e8d7a00cbeda1e70cc15be9c4af1018bdad53.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/system/core/+/4f6e8d7a00cbeda1e70cc15be9c4af1018bdad53
+Downloaded from https://android.googlesource.com/platform/system/core/+/4f6e8d7a00cbeda1e70cc15be9c4af1018bdad53
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -1404,7 +1436,7 @@ Description: Initial Contribution
 
 File extras-7341494707810f709855ea85ce03a8ec3ac8dbaf.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/system/extras/+/7341494707810f709855ea85ce03a8ec3ac8dbaf
+Downloaded from https://android.googlesource.com/platform/system/extras/+/7341494707810f709855ea85ce03a8ec3ac8dbaf
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -1417,7 +1449,7 @@ Description: Initial Contribution
 
 File ti-607e8a019b921eee008cd1e9ffc132318fabce7f.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/system/wlan/ti/+/607e8a019b921eee008cd1e9ffc132318fabce7f
+Downloaded from https://android.googlesource.com/platform/system/wlan/ti/+/607e8a019b921eee008cd1e9ffc132318fabce7f
 
 Committer: The Android Open Source Project <initial-contribution@android.com>	
 
@@ -1430,7 +1462,7 @@ Description: Initial Contribution
 
 File dream-open-419383f1193353baf5d3fae523e632363ee69637.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/vendor/htc/dream-open/+/419383f1193353baf5d3fae523e632363ee69637
+Downloaded from https://android.googlesource.com/platform/vendor/htc/dream-open/+/419383f1193353baf5d3fae523e632363ee69637
 
 Committer: Brian Swetland <swetland@google.com>
 
@@ -1440,7 +1472,7 @@ Description: initial commit
 
 Also, a newer file with more "stuff": dream-open-e3868b58332ab687e3d7225a04db4022572762e8.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/vendor/htc/dream-open/+/e3868b58332ab687e3d7225a04db4022572762e8
+Downloaded from https://android.googlesource.com/platform/vendor/htc/dream-open/+/e3868b58332ab687e3d7225a04db4022572762e8
 
 Committer: Iliyan Malchev <malchev@google.com>
 
@@ -1456,7 +1488,7 @@ See more at https://web.archive.org/web/20090228161022/https://source.android.co
 
 File msm7k-a3a947cc7e1bfaf7b5cfc85b71f602edf562836d.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/hardware/msm7k/+/a3a947cc7e1bfaf7b5cfc85b71f602edf562836d
+Downloaded from https://android.googlesource.com/platform/hardware/msm7k/+/a3a947cc7e1bfaf7b5cfc85b71f602edf562836d
 
 Committer: Brian Swetland <swetland@google.com>
 
@@ -1466,7 +1498,7 @@ Description: msm7k hardware glue, initial checkin: libaudio
 
 Also, a newer archive with more "stuff": msm7k-040da078eb98745efe4b3f05ad72e61c66ba70b5.tar.gz
 
-Downloaded from https://android.googleid.googlesource.com/platform/hardware/msm7k/+/040da078eb98745efe4b3f05ad72e61c66ba70b5
+Downloaded from https://android.googlesource.com/platform/hardware/msm7k/+/040da078eb98745efe4b3f05ad72e61c66ba70b5
 
 Committer: Iliyan Malchev <malchev@google.com>
 
