@@ -3,11 +3,10 @@
 # Check if an argument is provided
 if [ -z "$1" ]; then
   # No argument provided, print usage and exit
-  echo "This script unzips most of the .tar.gz files present in subfolder 'zipped' into a target directory."
-  echo "If the target directory already exists, the script will exit without doing anything. Otherwise, it will be created."
-  echo "Usage: $0 <target_directory_name>"
-  echo "Example: '$0 ../sources' will create a directory 'sources' next to this directory ('zipped'), and will extract the files into it."
+  echo "This script extracts most of the .tar.gz files present in this directory into a target directory."
   echo "No target directory name was specified. Existing."
+  echo "Usage: $0 <target_directory_name>"
+  echo "Example: '$0 ../sources' will create a directory 'sources' next to this directory, and will extract the files into it."
   exit 1
 fi
 
