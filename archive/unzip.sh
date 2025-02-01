@@ -339,11 +339,6 @@ tar -xzvf ti-607e8a019b921eee008cd1e9ffc132318fabce7f.tar.gz -C "$directory_name
 # This is a symlink that points to /tmp/bionic-kernel-headers/asm-arm ; it is useless, since the destination files don't exist. Delete it:
 rm "$directory_name/bionic/libc/arch-arm/include/asm"
 
-# Fix for the following build error: 
-#frameworks/base/libs/surfaceflinger/SurfaceFlinger.cpp:1592: error: ‘INT_MAX’ was not declared in this scope
-# It inserts a new line "#include <limits.h>" at line 22:
-sed -i '22 i #include <limits.h>' "$directory_name/frameworks/base/libs/surfaceflinger/SurfaceFlinger.cpp"
-
 printf "\nAll done, enjoy!\n"
 exit 0
 
