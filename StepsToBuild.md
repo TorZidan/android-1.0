@@ -13,7 +13,7 @@ as the SSL libraries being used are not part of `git`.
 
 My best suggestion is to download the files onto your host OS (using `git clone https://github.com/TorZidan/android-1.0.git` 
 or by downloading https://github.com/TorZidan/android-1.0/archive/refs/heads/main.zip and unziping it, or by using the GitHub Desktop app), 
-and then transfer them into a new folder `~/mydroid-1.0` on Ubuntu, using the "Machine -> File Manager" file transfer utility.
+and then transfer them into a new folder `~/mydroid-1.0` on Ubuntu, using the VirtualBox file transfer utility (in the Ubuntu VM window, from the top-row menus, choose "Machine -> File Manager", enter your Ubuntu username & password, click on "Open Session" and then thransfer the files).
 
 The instructions bellow assume that all archive failes are available on the Ubuntu VM, in folder `~/mydroid-1.0/archive`.
 
