@@ -7,4 +7,4 @@ Once you download these files on a Linux PC, use the [unzip.sh](archive/unzip.sh
 
 Instructions for setting up your Linux build environment are [here](BuildingTheBuildEnv.md).
 
-Instructions for building the source files are coming soon ...
+Instructions for building the source files are [here](StepsToBuild.md).
