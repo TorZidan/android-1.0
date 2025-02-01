@@ -81,6 +81,6 @@ So let's proceed:
             ... then scroll to the prompt, type "yes", enter. It will extract the Java files in subfoldfer `jdk1.5.0_22`.
         ```
 
-1. This should do it. Have you found an easier way to do any of these steps? Let me know by opening a "New Issue" here, on Github. Now proceed to [Buildding Android 1.0](BuildingIt.md). 
+1. This should do it. Have you found an easier way to do any of these steps? Let me know by opening a "New Issue" here, on Github. Now proceed to [Buildding Android 1.0](StepsToBuild.md). 
   
      
