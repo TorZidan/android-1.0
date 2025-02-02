@@ -92,6 +92,8 @@ or by preparing an "update.zip" file, placing it on an SD card, inserting it in 
 Note: this would work only on phones that have the "Engineering SPL" installed; this SPL (Second Program Loader) can be found on the "Android Dev Phone 1" (aka ADP1),
 which is a developer-friendly version of the HTC Dream phone, or on a "rooted" HTC Dream phone.
 
+Note: the Linux kernel is not part of any of the ".img" files above; it is in a separate partition, in file `boot.img`. See further down for more info.
+
 ## Building the Android SDK for Linux
 
 ```
@@ -136,3 +138,47 @@ out/host/linux-x86/sdk/android-sdk_eng.android_linux-x86/tools/emulator
 ```
 
 A new window will open, with a picture of a purple-colored phone in it. The phone needs a few seconds to fully boot. Use the mouse, as if you were using your finger on a touchscreen. Surprisingly, the Browser app still works with (some) modern web sites, once you discard the SSL warning messages popping up. The Emulator uses Qemu (see https://www.qemu.org/) to emulate the Arm-based Android Linux OS on Ubuntu x86 cpu. Impressive!
+
+## Building the Linux kernel
+
+Subfolder `~/mydroid-1.0/sources/kernel` contains the Linux open source files for Linux kernel version v2.6.25. These files are not Android-specific. Below, we will build them for the ARM processor family "msm" (used in the 1st Android phone HTC Dream).
+
+```
+cd mydroid-1.0/sources/kernel/
+
+export PATH=~/mydroid-1.0/sources/prebuilt/linux-x86/toolchain/arm-eabi-4.2.1/bin:$PATH
+
+# Generate a default ".config" file for arm msm processor family:
+make ARCH=arm msm_defconfig
+# ... or, optionally, use this editor, if you know what y'are doing:
+# make ARCH=arm menuconfig
+
+# Observe that the ".config" file is present:
+ls -la .config
+
+make clean
+make ARCH=arm CROSS_COMPILE=arm-eabi-
+```
+
+Come back in 2 minutes.
+
+Upon success, it should print:
+```
+...
+OBJCOPY arch/arm/boot/zImage
+Kernel: arch/arm/boot/zImage is ready
+```
+
+Here is the produced kernel image file:
+```
+ls -l arch/arm/boot/
+total 2788
+drwxr-xr-x 2 android android    4096 2024-12-18 15:20 bootp
+drwxr-xr-x 2 android android    4096 2025-02-02 10:38 compressed
+-rwxr-xr-x 1 android android 1890880 2025-02-02 10:38 Image
+-rw-r--r-- 1 android android    1326 2024-12-18 15:20 install.sh
+-rw-r--r-- 1 android android    2775 2024-12-18 15:20 Makefile
+-rwxr-xr-x 1 android android  938348 2025-02-02 10:38 zImage
+```
+
+
