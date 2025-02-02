@@ -92,4 +92,47 @@ or by preparing an "update.zip" file, placing it on an SD card, inserting it in 
 Note: this would work only on phones that have the "Engineering SPL" installed; this SPL (Second Program Loader) can be found on the "Android Dev Phone 1" (aka ADP1),
 which is a developer-friendly version of the HTC Dream phone, or on a "rooted" HTC Dream phone.
 
+## Building the Android SDK for Linux
 
+```
+cd ~/mydroid-1.0/sources
+
+# I needed to make this fix to get a successful build:
+mkdir --parents  development/emulator/prebuilt/android-arm/
+cp prebuilt/android-arm/kernel/kernel-qemu development/emulator/prebuilt/android-arm/kernel-qemu
+
+export JAVA_HOME=~/java/jdk1.5.0_22
+export PATH=~/java/jdk1.5.0_22/bin:$PATH
+export ANDROID_JAVA_HOME=$JAVA_HOME
+source ./build/envsetup.sh
+
+make sdk
+```
+
+Take a hike while it does its thing.
+
+Upon success, it should print:
+
+```
+...
+Package SDK: out/host/linux-x86/sdk/android-sdk_eng.android_linux-x86.zip
+SDK: warning: including GNU target out/target/product/generic/system/lib/libdbus.so
+```
+
+As we can see, it stored the build results in subfolder "out" (as with other build targets). Here are some notable files:
+
+```
+ls -l out/host/linux-x86/sdk/
+total 82204
+drwxrwx--- 5 android android     4096 2025-01-31 22:19 android-sdk_eng.android_linux-x86
+-rw-r--r-- 1 android android 83742582 2025-01-31 22:20 android-sdk_eng.android_linux-x86.zip
+-rw-r--r-- 1 android android   336496 2025-01-31 22:19 sdk_deps.mk
+```
+
+Interesting finding: the Android Emulator is part of the SDK. To run it:
+
+```
+out/host/linux-x86/sdk/android-sdk_eng.android_linux-x86/tools/emulator
+```
+
+A new window will open, with a picture of a purple-colored phone in it. The phone needs a few seconds to fully boot. Use the mouse, as if you were using your finger on a touchscreen. Surprisingly, the Browser app still works with (some) modern web sites, once you discard the SSL warning messages popping up. The Emulator uses Qemu (see https://www.qemu.org/) to emulate the Arm-based Android Linux OS on Ubuntu x86 cpu. Impressive!
