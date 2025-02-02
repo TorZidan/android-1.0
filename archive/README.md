@@ -27,13 +27,12 @@ Interestingly, Android-related posts appeared on the webs in Nov 2007 (or even e
 
 I can't resist sharing [this](https://news.ycombinator.com/item?id=22286111) discussion, as it lays out the "clash of the titans" of the mobile world, the demise of old corporate empires and the rise of new ones. Note: as any un-moderated online discussion, not everything in there is true, and you should take these individual oppinions with a "grain of salt".
 
-Here is a brief list of the few first official Android builds for the "HTC Dream" TMobile phone in USA:
+Here is a brief list of the few first official (publicly released) Android builds for the "HTC Dream" TMobile phone in USA:
 
-| Build name | Android version | Build date | Notes |
+| Build name | Android version | Build or release date | Notes |
 | :---:      | :---:           | :---:         | :---: |
-| TC4-RC19   | ???             | ???           | it is mentioned in [this](https://android.clients.google.com/updates/signed-kila-ota-114235-prereq.TC4-RC19.zip) file name (no-longer available).|
-| TC4-RC28   | ???             | ???           | it is mentioned in [this](https://android.clients.google.com/updates/signed-kila-ota-115247-prereq.TC4-RC19+RC28.zip) file name (no-longer available). |
-| TC4-RC29   | Android 1.0     | Oct. 24, 2008 | |
+| TC4-RC28   | Android 1.0     | Oct, 17, 2008 | Likely unofficial, in [this](https://android.clients.google.com/updates/signed-kila-ota-114235-prereq.TC4-RC19.zip) file (no-longer available). |
+| TC4-RC29   | Android 1.0     | Oct. 24, 2008 | The first batch of HTC Dream phones came with this build installed |
 | TC4-RC30   | Android 1.0     | Oct. 31, 2008 | |
 | PLAT-RC33  | Android 1.1 ("Petit Four")     | Jan. 16, 2009 | |
 | CRB43      | Android 1.5 ("Cupcake")        | May. 13, 2009 | |
@@ -124,7 +123,7 @@ frameworks/base :          Core Android app framework libraries
 frameworks/policies/base : Framework configuration policies
 hardware/libhardware :     Hardware abstraction library
 hardware/ril :             Radio interface layer
-kernel  (<<<most likely this is a typo, they mean "kernel/msm">>>):  Linux kernel
+kernel :                   Linux kernel
 prebuilt:                  Binaries to support Linux and Mac OS builds
 recovery :                 System recovery environment
 system/bluetooth :         Bluetooth tools
