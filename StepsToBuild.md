@@ -96,7 +96,7 @@ Note: the Linux kernel is not part of any of the ".img" files above; it is in a 
 
 ## Building the Android Simulator for Linux
 
-The Android simulator (not to be confused with the "emulator" further down) is basically the Android system build for the x86 platform (vs the usual build for arm platform). It was obsoleted soon after Android 1.0 got released (not sure when exactly). Perhaps the "emulator" won, and it did not malke sense to maintain and support both. The build steps are somewhat similar to above:
+The Android simulator (not to be confused with the "emulator" further down) is basically the Android system, built for the x86 Linux platform (vs the usual build for arm platform). It was obsoleted soon after Android 1.0 got released (not sure when exactly). Perhaps the "emulator" won, and it did not malke sense to maintain and support both. The build steps are somewhat similar to above:
 
 ```
 cd ~/mydroid-1.0/sources
