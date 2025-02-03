@@ -8,7 +8,7 @@ Obviously, this is just one way to do this. You can use any other VM software, o
 
 The original instructions can be found at https://web.archive.org/web/20081022180011/http://source.android.com/download. In there, they recommend using Ubuntu 6.06. I tried installing it, but I could not get the Virtualbox guest additions software to work well, wich resulted in a lagging mouse pointer and low screen resolution.
 
-Why not use a recent, modern OS? I find that to be a lost battle: as new OS releases come out every year, the instructions here would need to be updated, which would end up in one huge mess.
+Why not use a recent, modern Linux OS? I find that to be a lost battle: as new Linux (e.g. Ubuntu) OS releases come out every year, the instructions here would need to be updated, which would end up in one huge mess. The newer version of `gcc` and `g++` compilers are more strict and error out on this old codebase. Fixing these build errors would result in something that is no-longer Android 1.0. Installing old gcc compilers, libraries and toolchains on modern OS is not fun, either. But you are welcome to try!
 
 Will the instructions here work foreverandeverandever? No. Most likely one day Ubuntu will cease the "apt" software update support for Ubuntu 8.04, and the instructions below will fail. Or the future VirtualBox VM Guest Additions software versions will no-longer run properly on the Ubuntu 8 "guest" OS. 
 
