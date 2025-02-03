@@ -206,8 +206,20 @@ drwxr-xr-x 2 android android    4096 2025-02-02 10:38 compressed
 -rwxr-xr-x 1 android android  938348 2025-02-02 10:38 zImage
 ```
 
-If we built it using the `.config` file from the emulator, then we can launch the emulator with the new kernel file:
+If we built the kernel using the `.config` file from the emulator, then we can launch the emulator with the new kernel file:
 ```
 ../out/host/linux-x86/sdk/android-sdk_eng.android_linux-x86/tools/emulator -kernel arch/arm/boot/zImage
 ```
+
+If we built the kernel using the `.config` file from an HTC phone, we can run it on the phone, without permanently "flashing" it (temporarily, until the next phone reboot).
+  * NOTICE: the instructions below are untested and may brick your phone. Proceed at your own risk.
+  * Restart the phone in "Fastboot" mode: with the phone shut down, hold the CAMERA + POWER buttons to enter the bootloader / fastboot screen. It will say "Serial0". Connect the phone to your PC via USB. Press the "back" button on the phone. On the screen, it should replace the text "Serial0" with "FASTBOOT". You are in fastboot mode.
+  * Push the zImage to the phone: `../out/host/linux-x86/sdk/android-sdk_eng.android_linux-x86/tools/fastboot boot arch/arm/boot/zImage`
+  * The `fastboot` command will create a "boot.img" file and then push it to the phone. Then follow the instructions on the phone.
+  * Note: To exist the "fastboot/bootloader" mode, press CALL + MENU + POWER. It will restart the phone.
+
+How can we generate a `boot.img` file, similar to the one that `fastboot` generated temporarily above (before pushit it to the phone)? You will need to create a "ramdisk" file using the `mkbootfs` tool and then merge the `zImage` file and the ramdisk file into one `boot.img` file using the `mkbootimg` tool (both `mkbootfs` and `mkbootimg` are part of the Android SDK). See [here](https://web.archive.org/web/20090415031206/http://android-dls.com/wiki/index.php?title=HOWTO:_Unpack%2C_Edit%2C_and_Re-Pack_Boot_Images#Unpacking.2C_Editing.2C_and_Re-Packing_the_images) for more info.
+
+
+
 
