@@ -143,15 +143,41 @@ A new window will open, with a picture of a purple-colored phone in it. The phon
 
 Subfolder `~/mydroid-1.0/sources/kernel` contains the Linux open source files for Linux kernel version v2.6.25. These files are not Android-specific. Below, we will build them for the ARM processor family "msm" (used in the 1st Android phone HTC Dream).
 
+Before building the kernel. you must create a file `mydroid-1.0/sources/kernel/.config` which will guide the build process.
+
+You have many options:
+
+* Use a default `.config` file:
+    ```
+    cd mydroid-1.0/sources/kernel/
+    make ARCH=arm msm_defconfig
+    ```
+* Create your own file:
+     ```
+    cd mydroid-1.0/sources/kernel/
+    make ARCH=arm menuconfig
+    ```
+     This will launch an "editor". Navigate throug menus with "tab", and "enter". Do your edits. At the end, choose "Exit"; when prompted, save your work.
+* If buildng the kernel for use in the Android emulator, then extract the config file from a running emulator:
+   ```
+   cd mydroid-1.0/sources/kernel/
+   # Delete any previous .config file:
+   rm .config
+   # Launch the emulator and wait for it to fully boot up:
+   ../out/host/linux-x86/sdk/android-sdk_eng.android_linux-x86/tools/emulator &
+   # Copy file config.gz from the running emulator's Android VM filesystem to Ubuntu:
+   ../out/host/linux-x86/sdk/android-sdk_eng.android_linux-x86/tools/adb pull /proc/config.gz .
+   # Now you can close the emultor window.
+   gunzip config.gz
+   mv config .config
+   ```
+* If building for the HTC Dream phone, you will have to pull the config.gz file from a running phone using `adb`, similarly to the steps above. Make sure your phone is running build TC4-RC29 or TC4-RC30 (android 1.0). Make sure "usb debugging" is enabled on the phone, so that it will accept "adb" connections. Connect the phone to your PC using a mini-USB-to-USB-A cable, and follow steps similar to above.
+
+Once we have a `.config` file ready:
 ```
 cd mydroid-1.0/sources/kernel/
 
 export PATH=~/mydroid-1.0/sources/prebuilt/linux-x86/toolchain/arm-eabi-4.2.1/bin:$PATH
-
-# Generate a default ".config" file for arm msm processor family:
-make ARCH=arm msm_defconfig
-# ... or, optionally, use this editor, if you know what y'are doing:
-# make ARCH=arm menuconfig
 
 # Observe that the ".config" file is present:
 ls -la .config
@@ -165,11 +191,10 @@ Come back in 2 minutes.
 Upon success, it should print:
 ```
 ...
-OBJCOPY arch/arm/boot/zImage
 Kernel: arch/arm/boot/zImage is ready
 ```
 
-Here is the produced kernel image file:
+Here is an example of the produced kernel image file:
 ```
 ls -l arch/arm/boot/
 total 2788
@@ -181,4 +206,8 @@ drwxr-xr-x 2 android android    4096 2025-02-02 10:38 compressed
 -rwxr-xr-x 1 android android  938348 2025-02-02 10:38 zImage
 ```
 
+If we built it using the `.config` file from the emulator, then we can launch the emulator with the new kernel file:
+```
+../out/host/linux-x86/sdk/android-sdk_eng.android_linux-x86/tools/emulator -kernel arch/arm/boot/zImage
+```
 
