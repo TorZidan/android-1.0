@@ -42,7 +42,7 @@ Go get a coffee while it does its thing.
 
 Basically, we are running the `make` command without specifying any build target, with a bunch of env. variables set, which guide the build process what to do. 
 
-Note: this long "make" command is same as: `lunch 1` followed by just `make`. Here, "lunch" is a bash command that was defined by running `source ./build/envsetup.sh` above; when run, it just sets a bunch of env. variables.
+Note: this long `make` command above is same as: `lunch 1` followed by just `make`. Here, "lunch" is a bash command that was defined by running `source ./build/envsetup.sh` above; when run, it just sets a bunch of env. variables.
 
 Note: the `make` build process executes the build instructions in the `Makefile` found in the current folder, which, itself, invokes the build instructions in the `Android.mk` files found in many of the subfolders.
 
@@ -93,6 +93,33 @@ Note: this would work only on phones that have the "Engineering SPL" installed; 
 which is a developer-friendly version of the HTC Dream phone, or on a "rooted" HTC Dream phone.
 
 Note: the Linux kernel is not part of any of the ".img" files above; it is in a separate partition, in file `boot.img`. See further down for more info.
+
+## Building the Android Simulator for Linux
+
+The Android simulator (not to be confused with the "emulator" further down) is basically the Android system build for the x86 platform (vs the usual build for arm platform). It was obsoleted soon after Android 1.0 got released (not sure when exactly). Perhaps the "emulator" won, and it did not malke sense to maintain and support both. The build steps are somewhat similar to above:
+
+```
+cd ~/mydroid-1.0/sources
+export JAVA_HOME=~/java/jdk1.5.0_22
+export PATH=~/java/jdk1.5.0_22/bin:$PATH
+export ANDROID_JAVA_HOME=$JAVA_HOME
+source ./build/envsetup.sh
+make TARGET_PRODUCT=sim TARGET_SIMULATOR=true TARGET_BUILD_TYPE=release TARGET_ARCH=arm TARGET_OS=linux HOST_ARCH=x86 HOST_OS=linux HOST_BUILD_TYPE=release BUILD_ID=TC4
+```
+
+Take a walk around the block.
+
+The build should complete without errors.
+
+Note: this long `make` command above is same as: `lunch 2` followed by `choosetype release` followed by just `make`. Here, "lunch" and "choosetype" are bash commands that were defined by running `source ./build/envsetup.sh` above; when run, they just sets a bunch of env. variables. The `choosetype release` overrides the default `TARGET_BUILD_TYPE=debug` to `TARGET_BUILD_TYPE=release`.  Without that, there would be a build error. To get a successful build with `TARGET_BUILD_TYPE=debug` we need to add the line `LOCAL_SHARED_LIBRARIES += libcorecg` to the relevant `Android.mk` files.
+
+Running the Simulator:
+
+```
+out/host/linux-x86/bin/simulator
+```
+
+The Simulator will launch three windows, one containing a picture of a phone, see example [here](https://photos.app.goo.gl/NbLTGevbHYWZ8fqs5). Who said we can't run Android on x86 platforms?
 
 ## Building the Android SDK for Linux
 
