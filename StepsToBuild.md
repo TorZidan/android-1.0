@@ -27,7 +27,7 @@ chmod +x ./unzip.sh
 
 This will extract all files into folder `~/mydroid-1.0/sources`.
 
-## Building the "image" files for use on HTC Dream (the 1st Android phone):
+## Building the Android "disk" partition image files for use on HTC Dream (the 1st Android phone):
 
 ```
 cd ~/mydroid-1.0/sources
@@ -49,7 +49,7 @@ Note: the `make` build process executes the build instructions in the `Makefile`
 Note: `make` uses Ubuntu's gcc and g++ compilers (version 4.2.4) and a gcc/g++ crosscompiler for the 'arm' platform that comes with Android, in subfolder `prebuilt/linux-x86/toolchain/arm-eabi-4.2.1/bin`.
 Using any older or newer version of these compilers will result in build errors.
 
-Upon success, it should exit with:
+Upon success, it should print:
 ```
 ...
 Generated: (out/target/product/generic/android-info.txt)
@@ -86,8 +86,7 @@ total 27368
 ...
 ```
 
-The ".img" files above contain full "hard drive" (actually flash-memory drive) partitions populated with all necessary files for running Android, including the Linux kernel, the Android "framework", the "default Android apps (Phone, Browser, Maps, Contacts, Gmail,etc) and more.
-They can be "flashed" onto an "HTC Dream" phone using the `fastboot` command (it transmitts them to the phone over a USB cable), 
+The ".img" files above contain full "hard drive" (actually flash-memory drive) partitions populated with all necessary files for running Android, including the Linux kernel, the Android "framework", the "default Android apps (Phone, Browser, Maps, Contacts, Gmail,etc) and more. They can be "flashed" onto an "HTC Dream" phone using the `fastboot` command (it transmitts them to the phone over a USB cable), 
 or by preparing an "update.zip" file, placing it on an SD card, inserting it in the phone, and "flashing" the file from the phone's "recovery" screen.
 Note: this would work only on phones that have the "Engineering SPL" installed; this SPL (Second Program Loader) can be found on the "Android Dev Phone 1" (aka ADP1),
 which is a developer-friendly version of the HTC Dream phone, or on a "rooted" HTC Dream phone.
