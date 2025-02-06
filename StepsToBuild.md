@@ -244,8 +244,17 @@ If we built the kernel using the `.config` file from an HTC phone, we can run it
   * The `fastboot` command will create a "boot.img" file and then push it to the phone. Then follow the instructions on the phone.
   * Note: To exist the "fastboot/bootloader" mode, press CALL + MENU + POWER. It will restart the phone.
 
-How can we generate a `boot.img` file, similar to the one that `fastboot` generated temporarily above (before pushing it to the phone)? You will need to create a "ramdisk" file using the `mkbootfs` tool and then merge the `zImage` file and the ramdisk file into one `boot.img` file using the `mkbootimg` tool (both `mkbootfs` and `mkbootimg` are part of the Android SDK). See [here](https://web.archive.org/web/20090415031206/http://android-dls.com/wiki/index.php?title=HOWTO:_Unpack%2C_Edit%2C_and_Re-Pack_Boot_Images#Unpacking.2C_Editing.2C_and_Re-Packing_the_images) for more info. It seems that the "ramdisk" image file cannot be generated from the Android source files, and it must be extracted from an HTC Dream phone? It's hard to believe that: there is nothing proprietary in the files on the ramdisk. Perhaps the "ramdisk.img" we built further above is the same ramdisk that is needed here? Do you know more about this? Let me know by creating a new "Issue".
+How can we generate a `boot.img` file, similar to the one that is distributed with the standard "OTA" (over-the-air) update files?
+Once you buil the androd "disk" partitions (above) and the linux kernel (also above), try this (!untested!):
 
+```
+cd mydroid-1.0/sources
+out/host/linux-x86/bin/mkbootimg --cmdline 'no_console_suspend=1 console=null' --kernel kernel/arch/arm/boot/zImage --ramdisk out/target/product/generic/ramdisk.img -o boot.img
+```
+
+See [here](https://web.archive.org/web/20090415031206/http://android-dls.com/wiki/index.php?title=HOWTO:_Unpack%2C_Edit%2C_and_Re-Pack_Boot_Images#Unpacking.2C_Editing.2C_and_Re-Packing_the_images) for more info. 
+
+Then, the produced `boot.img` file can be placed in an `update.zip` file (and then properly sign it), to produce a a distributable update file that other people can "flash" onto their phones.
 
 
 
