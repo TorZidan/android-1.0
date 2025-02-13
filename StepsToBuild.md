@@ -86,8 +86,8 @@ total 27368
 ...
 ```
 
-The ".img" files above contain full "hard drive" (actually flash-memory drive) partitions populated with all necessary files for running Android, including the Linux kernel, the Android "framework", the "default Android apps (Phone, Browser, Maps, Contacts, Gmail,etc) and more. They can be "flashed" onto an "HTC Dream" phone using the `fastboot` command (it transmitts them to the phone over a USB cable), 
-or by preparing an "update.zip" file, placing it on an SD card, inserting it in the phone, and "flashing" the file from the phone's "recovery" screen.
+The ".img" files above contain full "hard drive" (actually flash-memory drive) partitions populated with all necessary files for running Android, including the Linux kernel, the Android framework, the default Android apps (Phone, Browser, Maps, Contacts, Gmail,etc) and more. They can be "flashed" onto an "HTC Dream" phone using the `fastboot` command (it transmits them to the phone over a USB cable), 
+or by preparing an "update.zip" file, placing it on a micro SD card, inserting it in the phone, and "flashing" the file from the phone's "recovery" screen.
 Note: this would work only on phones that have the "Engineering SPL" installed; this SPL (Second Program Loader) can be found on the "Android Dev Phone 1" (aka ADP1),
 which is a developer-friendly version of the HTC Dream phone, or on a "rooted" HTC Dream phone.
 
