@@ -25,9 +25,9 @@ chmod +x ./unzip.sh
 ./unzip.sh ../sources
 ```
 
-This will extract all files into folder `~/mydroid-1.0/sources`.
+This will extract all files into a new folder `~/mydroid-1.0/sources`.
 
-## Building the Android "disk" partition image files for use on HTC Dream (the 1st Android phone):
+## Building the Android file partition image files for use on HTC Dream (the 1st Android phone):
 
 ```
 cd ~/mydroid-1.0/sources
@@ -245,7 +245,7 @@ If we built the kernel using the `.config` file from an HTC phone, we can run it
   * Note: To exist the "fastboot/bootloader" mode, press CALL + MENU + POWER. It will restart the phone.
 
 How can we generate a `boot.img` file, similar to the one that is distributed with the standard "OTA" (over-the-air) update files?
-Once you buil the androd "disk" partitions (above) and the linux kernel (also above), try this (!untested!):
+Once you buil the androd file partitions (above) and the linux kernel (also above), try this (!untested!):
 
 ```
 cd mydroid-1.0/sources
