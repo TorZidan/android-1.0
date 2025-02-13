@@ -10,9 +10,9 @@ The original instructions can be found at https://web.archive.org/web/2008102218
 
 Why not use a recent, modern Linux OS? I find that to be a lost battle: as new Linux (e.g. Ubuntu) OS releases come out every year, the instructions here would need to be updated, which would end up in one huge mess. The newer version of `gcc` and `g++` compilers are more strict and error out on this old codebase. Fixing these build errors would result in something that is no-longer Android 1.0. Installing old gcc compilers, libraries and toolchains on modern OS is not fun, either. But you are welcome to try!
 
-Will the instructions here work foreverandeverandever? No. Most likely one day Ubuntu will cease the "apt" software update support for Ubuntu 8.04, and the instructions below will fail. Or the future VirtualBox VM Guest Additions software versions will no-longer run properly on the Ubuntu 8 "guest" OS. 
+Will the instructions here work foreverandeverandever? No. Most likely one day Ubuntu will cease the "apt" software update support for Ubuntu 8.04, and the instructions below will fail. Or the future VirtualBox VM Guest Additions software versions will no-longer run properly on the Ubuntu 8 "guest" OS, which will make it extremely painful to use (lagging, misplaced mouse cursor, low screen resolution, no way to transfer files to/from the VM host computer).
 
-"Can I skip all these installation steps and get from somewhere a VM file that is fully setup, and I would just boot it up on my PC using VirtuaBox?" No. I could share my VM file, but am not sure about violating any copyrights. And you should have security concerns about downloading VM images and running them on your PC; in theory, they may have unwelcome "trojan" software that tries to hack your PC and everything else on your local network.
+"Can I skip all these installation steps and find somewhere a VM file that is fully setup, and I would just boot it up on my PC using VirtuaBox?" Not a good idea. I could share my VM file, but am not sure about violating any copyrights. And you should have security concerns about downloading VM images and running them on your PC; in theory, they may have unwelcome "trojan" software that tries to hack your host PC and everything else on your local network.
 
 So let's proceed:
 
