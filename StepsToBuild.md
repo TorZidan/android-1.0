@@ -35,7 +35,8 @@ export JAVA_HOME=~/java/jdk1.5.0_22
 export PATH=~/java/jdk1.5.0_22/bin:$PATH
 export ANDROID_JAVA_HOME=$JAVA_HOME
 source ./build/envsetup.sh
-make TARGET_PRODUCT=generic TARGET_SIMULATOR=false TARGET_BUILD_TYPE=release TARGET_ARCH=arm TARGET_OS=linux HOST_ARCH=x86 HOST_OS=linux HOST_BUILD_TYPE=releas BUILD_ID=TC4
+make clean
+make TARGET_PRODUCT=generic TARGET_SIMULATOR=false TARGET_BUILD_TYPE=release TARGET_ARCH=arm TARGET_OS=linux HOST_ARCH=x86 HOST_OS=linux HOST_BUILD_TYPE=release BUILD_ID=TC4
 ```
 
 Go get a coffee while it does its thing.
