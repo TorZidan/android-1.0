@@ -246,11 +246,12 @@ If we built the kernel using the `.config` file from an HTC phone, we can run it
   * Note: To exist the "fastboot/bootloader" mode, press CALL + MENU + POWER. It will restart the phone.
 
 How can we generate a `boot.img` file, similar to the one that is distributed with the standard "OTA" (over-the-air) update files?
-Once you buil the androd file partitions (above) and the linux kernel (also above), try this (!untested!):
+Once you buil the androd file partitions (above) and the linux kernel (also above), do this:
 
 ```
 cd mydroid-1.0/sources
-out/host/linux-x86/bin/mkbootimg --cmdline 'no_console_suspend=1 console=null' --kernel kernel/arch/arm/boot/zImage --ramdisk out/target/product/generic/ramdisk.img -o boot.img
+out/host/linux-x86/bin/mkbootimg --cmdline 'no_console_suspend=1 console=null' --kernel kernel/arch/arm/boot/zImage --ramdisk out/target/product/generic/ramdisk.img --board goldfish -o boot.img
+# note: the file ramdisk.img (used here) is already gzipped; good, this is what "mkbootimg" expects/needs.
 ```
 
 See [here](https://web.archive.org/web/20090415031206/http://android-dls.com/wiki/index.php?title=HOWTO:_Unpack%2C_Edit%2C_and_Re-Pack_Boot_Images#Unpacking.2C_Editing.2C_and_Re-Packing_the_images) for more info. 
