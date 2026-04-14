@@ -212,8 +212,8 @@ ls -la .config
 make clean
 make ARCH=arm CROSS_COMPILE=arm-eabi-
 ```
-
 Come back in 2 minutes.
+Note: if it starts asking you to answer questions with y/n on the screen, it means that your ".config" file is "bad"; close your terminal window and start over.
 
 Upon success, it should print:
 ```
@@ -233,8 +233,9 @@ drwxr-xr-x 2 android android    4096 2025-02-02 10:38 compressed
 -rwxr-xr-x 1 android android  938348 2025-02-02 10:38 zImage
 ```
 
-If we built the kernel using the `.config` file from the emulator, then we can launch the emulator with the new kernel file:
+If we built the kernel using the `.config` file from the emulator (see above), then we can launch the emulator with the new kernel file:
 ```
+cd mydroid-1.0/sources/kernel
 ../out/host/linux-x86/sdk/android-sdk_eng.android_linux-x86/tools/emulator -kernel arch/arm/boot/zImage
 ```
 
@@ -243,20 +244,21 @@ If we built the kernel using the `.config` file from an HTC phone, we can run it
   * Restart the phone in "Fastboot" mode: with the phone shut down, hold the CAMERA + POWER buttons to enter the bootloader / fastboot screen. It will say "Serial0". Connect the phone to your PC via USB. Press the "back" button on the phone. On the screen, it should replace the text "Serial0" with "FASTBOOT". You are in fastboot mode.
   * Push the zImage to the phone: `../out/host/linux-x86/sdk/android-sdk_eng.android_linux-x86/tools/fastboot boot arch/arm/boot/zImage`
   * The `fastboot` command will create a "boot.img" file and then push it to the phone. Then follow the instructions on the phone.
-  * Note: To exist the "fastboot/bootloader" mode, press CALL + MENU + POWER. It will restart the phone.
+  * Note: To exit the "fastboot/bootloader" mode, press CALL + MENU + POWER. It will restart the phone.
 
 How can we generate a `boot.img` file, similar to the one that is distributed with the standard "OTA" (over-the-air) update files?
-Once you buil the androd file partitions (above) and the linux kernel (also above), do this:
+Once you build the androd file partitions (above) and the linux kernel (also above), do this:
 
 ```
 cd mydroid-1.0/sources
-out/host/linux-x86/bin/mkbootimg --cmdline 'no_console_suspend=1 console=null' --kernel kernel/arch/arm/boot/zImage --ramdisk out/target/product/generic/ramdisk.img --board goldfish -o boot.img
-# note: the file ramdisk.img (used here) is already gzipped; good, this is what "mkbootimg" expects/needs.
+out/host/linux-x86/bin/mkbootimg --cmdline 'no_console_suspend=1 console=null' --kernel kernel/arch/arm/boot/zImage --ramdisk out/target/product/generic/ramdisk.img --board trout -o boot.img
+# note: the file "ramdisk.img" (above) is already gzipped; good, this is what "mkbootimg" expects/needs.
+# note: "trout" (above) is the codename for the HTC Dream phone.
 ```
 
 See [here](https://web.archive.org/web/20090415031206/http://android-dls.com/wiki/index.php?title=HOWTO:_Unpack%2C_Edit%2C_and_Re-Pack_Boot_Images#Unpacking.2C_Editing.2C_and_Re-Packing_the_images) for more info. 
 
-Then, the produced `boot.img` file can be placed in an `update.zip` file (and then properly sign it), to produce a a distributable update file that other people can "flash" onto their phones.
+Then, the produced `boot.img` file can be placed in an `update.zip` file (and then you need to properly sign it), to produce a a distributable update file that other people can "flash" onto their phones.
 
 
 
