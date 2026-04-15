@@ -176,18 +176,18 @@ You have many options:
 
 * Use a default `.config` file:
     ```
-    cd mydroid-1.0/sources/kernel/
+    cd ~/mydroid-1.0/sources/kernel/
     make ARCH=arm msm_defconfig
     ```
 * Create your own file:
      ```
-    cd mydroid-1.0/sources/kernel/
+    cd ~/mydroid-1.0/sources/kernel/
     make ARCH=arm menuconfig
     ```
      This will launch an "editor". Navigate throug menus with "tab", and "enter". Do your edits. At the end, choose "Exit"; when prompted, save your work.
 * If buildng the kernel for use in the Android emulator, then extract the config file from a running emulator:
    ```
-   cd mydroid-1.0/sources/kernel/
+   cd ~/mydroid-1.0/sources/kernel/
    # Delete any previous .config file:
    rm .config
    # Launch the emulator and wait for it to fully boot up:
@@ -202,7 +202,7 @@ You have many options:
 
 Once we have a `.config` file ready:
 ```
-cd mydroid-1.0/sources/kernel/
+cd ~/mydroid-1.0/sources/kernel/
 
 export PATH=~/mydroid-1.0/sources/prebuilt/linux-x86/toolchain/arm-eabi-4.2.1/bin:$PATH
 
@@ -235,7 +235,7 @@ drwxr-xr-x 2 android android    4096 2025-02-02 10:38 compressed
 
 If we built the kernel using the `.config` file from the emulator (see above), then we can launch the emulator with the new kernel file:
 ```
-cd mydroid-1.0/sources/kernel
+cd ~/mydroid-1.0/sources/kernel
 ../out/host/linux-x86/sdk/android-sdk_eng.android_linux-x86/tools/emulator -kernel arch/arm/boot/zImage
 ```
 
@@ -250,7 +250,7 @@ How can we generate a `boot.img` file, similar to the one that is distributed wi
 Once you build the androd file partitions (above) and the linux kernel (also above), do this:
 
 ```
-cd mydroid-1.0/sources
+cd ~/mydroid-1.0/sources
 out/host/linux-x86/bin/mkbootimg --cmdline 'no_console_suspend=1 console=null' --kernel kernel/arch/arm/boot/zImage --ramdisk out/target/product/generic/ramdisk.img --board trout -o boot.img
 # note: the file "ramdisk.img" (above) is already gzipped; good, this is what "mkbootimg" expects/needs.
 # note: "trout" (above) is the codename for the HTC Dream phone.
