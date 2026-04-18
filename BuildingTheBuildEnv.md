@@ -4,15 +4,17 @@ In this codelab I will guide you thrugh the setup of a build environemnt where y
 
 ## Create a VM (Virtual Machine) in Oracle VirtualBox that runs Ubuntu v8.04.4 LTS 32-bit OS.
 
-Obviously, this is just one way to do this. You can use any other VM software, or perhaps you can install Ubuntu 8.04 32-bit as "bare metal" OS on your PC. Or you can use some other old Linux distribution. Or you can find a preinstalled "image" that you can launch on Amazon, Google or Microsoft cloud.
+Obviously, this is just one way to do this. You can use any other VM software, or perhaps you can install Ubuntu 8.04 32-bit as "bare metal" OS on your PC (read more below). Or you can use some other old Linux distribution. Or you can find a preinstalled "image" that you can launch on Amazon, Google or Microsoft cloud.
 
 The original instructions can be found at https://web.archive.org/web/20081022180011/http://source.android.com/download. In there, they recommend using Ubuntu 6.06. I tried installing it, but I could not get the Virtualbox guest additions software to work well, wich resulted in a lagging mouse pointer and low screen resolution.
 
 Why not use a recent, modern Linux OS? I find that to be a lost battle: as new Linux (e.g. Ubuntu) OS releases come out every year, the instructions here would need to be updated, which would end up in one huge mess. The newer version of `gcc` and `g++` compilers are more strict and error out on this old codebase. Fixing these build errors would result in something that is no-longer Android 1.0. Installing old gcc compilers, libraries and toolchains on modern OS is not fun, either. But you are welcome to try!
 
-Will the instructions here work foreverandeverandever? No. Most likely one day Ubuntu will cease the "apt" software update support for Ubuntu 8.04, and the instructions below will fail. Or the future VirtualBox VM Guest Additions software versions will no-longer run properly on the Ubuntu 8 "guest" OS, which will make it extremely painful to use (lagging, misplaced mouse cursor, low screen resolution, no way to transfer files to/from the VM host computer).
+Why not use an old PC and just install Ubuntu 8 on it? You can do that. Note taht that writing the ISO file `ubuntu-8.04-desktop-i386.iso` to a USB drive will result in a non-bootable USB device, because the iso file is intended to be burned on a CD-rom; so you will have to burn the iso file on a R/W CD-rom drive (maybe a DVD-rom will work too?), and then boot from there. Also, you will need to disable UEFI bios support in your motherboard Bios, and perhaps find and toggle a  checkbox to enable support for "legacy" usb devices. Hmmm, ooook, a dead end for me.
 
-"Can I skip all these installation steps and find somewhere a VM file that is fully setup, and I would just boot it up on my PC using VirtuaBox?" Not a good idea. I could share my VM file, but am not sure about violating any copyrights. And you should have security concerns about downloading VM images and running them on your PC; in theory, they may have unwelcome "trojan" software that tries to hack your host PC and everything else on your local network.
+Will the instructions here work foreverandeverandever? No. Most likely one day Ubuntu will cease the "apt" software update support for Ubuntu 8.04, and the instructions below will fail. Or the future VirtualBox VM Guest Additions software versions will no-longer run properly with Ubuntu 8, which will make it extremely painful to use (lagging/misplaced mouse cursor, low screen resolution, no way to transfer files to/from the VM host computer).
+
+"Can I skip all these installation steps and find somewhere a VM file that is fully setup, and I would just boot it up on my PC using VirtuaBox?" Not a good idea. I could share my VM file, but am not sure about violating any copyrights. And you should have security concerns about downloading VM images and running them on your PC: they MAY have unwelcome "trojan" software that tries to hack your host PC and everything else on your local network.
 
 So let's proceed:
 
